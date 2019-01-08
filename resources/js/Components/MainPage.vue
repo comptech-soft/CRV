@@ -14,7 +14,8 @@
                 </div>
             </div>
 
-            <div class="m-header__bottom">
+            <!-- doar daca avem user logat -->
+            <div v-if="$app.user" class="m-header__bottom">
                 <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
                     <div class="m-stack m-stack--ver m-stack--desktop">
 
@@ -31,11 +32,16 @@
         <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop m-container m-container--responsive m-container--xxl m-page__container m-body">
             <div class="m-grid__item m-grid__item--fluid m-wrapper">
 
-                <sub-header>
+                <!-- doar daca avem user logat -->
+                <sub-header
+                    v-if="$app.user"
+                >
                 </sub-header>
                 
                 <div class="m-content">
-                    Content
+                    
+                    User: {{ $app.user }}<br/>
+                    Role: {{ $app.role }}
                 </div>
             </div>
         </div>

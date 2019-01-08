@@ -53,6 +53,7 @@ class Boot {
 
         /** Create app  */
         window[name] = {}
+        window[name]['Http'] = require('./../Http/Http')
     }
 
     LoadLodash() {
