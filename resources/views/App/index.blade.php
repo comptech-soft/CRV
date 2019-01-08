@@ -2,7 +2,7 @@
 
 <html lang="{{ config('app.locale') }}">
 	
-	@include('head')
+	@include('Commons.head')
 	
 	<body class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
 		<main id="crv-app">
@@ -15,7 +15,8 @@
 			<quick-nav></quick-nav>
 		</main>
 
-		@include('scripts')
+		@include('Commons.scripts')
+		<script src="{{ config('app.url')}}/js/Apps/Crv/index.js" type="text/javascript"></script>
 	</body>
 
 </html>

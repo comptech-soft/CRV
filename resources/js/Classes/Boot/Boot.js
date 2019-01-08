@@ -54,6 +54,7 @@ class Boot {
         /** Create app  */
         window[name] = {}
         window[name]['Http'] = require('./../Http/Http')
+        window[name]['FormManager'] = require('./../FormManager/FormManager')
     }
 
     LoadLodash() {

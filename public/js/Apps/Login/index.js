@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -49187,10 +49187,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/Apps/Crv/index.js":
-/*!****************************************!*\
-  !*** ./resources/js/Apps/Crv/index.js ***!
-  \****************************************/
+/***/ "./resources/js/Apps/Login/index.js":
+/*!******************************************!*\
+  !*** ./resources/js/Apps/Login/index.js ***!
+  \******************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -51198,14 +51198,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 0:
-/*!**********************************************!*\
-  !*** multi ./resources/js/Apps/Crv/index.js ***!
-  \**********************************************/
+/***/ 1:
+/*!************************************************!*\
+  !*** multi ./resources/js/Apps/Login/index.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\xampp\htdocs\CRV\resources\js\Apps\Crv\index.js */"./resources/js/Apps/Crv/index.js");
+module.exports = __webpack_require__(/*! D:\xampp\htdocs\CRV\resources\js\Apps\Login\index.js */"./resources/js/Apps/Login/index.js");
 
 
 /***/ })
