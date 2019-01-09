@@ -5,7 +5,7 @@ namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use Comptechsoft\Usermanagement\Auth\Auth;
+use Comptech\Auth\Auth;
 
 class AuthController extends Controller
 {

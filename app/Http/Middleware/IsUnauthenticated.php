@@ -27,7 +27,7 @@ class IsUnauthenticated
         | --> Se ajunge pe pagina welcome fara user, pagina are optiunea de login
         */
         // Sentinel::logout($user, true);
-        return redirect( route(config('comptechsoft.users.routes.welcome')) );
+        return redirect( route('welcome') );
     }
 
 }

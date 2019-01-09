@@ -9,20 +9,40 @@
 				'm-login__form': true,
 				'm-form': true,
 			}"
+			:result="formManager ? formManager.result : null"
+            @close="formManager.result = null"
 		>
 			<template slot="form-controls">
-				<div class="form-group m-form__group">
-					<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
-				</div>
-				<div class="form-group m-form__group">
-					<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="password">
-				</div>
+				<text-box
+					id="user-email"
+					field="email"
+					placeholder="Adresa de email"
+					
+					v-model="record.email"
+					:errors="formManager ? formManager.getErrors() : null"
+				>
+				</text-box>
+
+				<text-box
+					type="password"
+					id="user-password"
+					field="password"
+					placeholder="Parola"
+					v-model="record.password"
+					:errors="formManager ? formManager.getErrors() : null"
+				>
+				</text-box>
+
 				<div class="row m-login__form-sub">
 					<div class="col m--align-left">
-						<label class="m-checkbox m-checkbox--focus">
-							<input type="checkbox" name="remember"> Remember me
-							<span></span>
-						</label>
+						<check-box
+							type="checkbox"
+							id="remember_me"
+							field="remember_me"
+							label="Tine-mă minte!"
+							v-model="record.remember_me"
+						>
+						</check-box>
 					</div>
 					<div class="col m--align-right">
 						<a href="javascript:;" id="m_login_forget_password" class="m-link">Forget Password ?</a>
@@ -36,6 +56,7 @@
 						type="button" 
 						id="m_login_signin_submit" 
 						class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air"
+						@click="onClickLogin"
 					>
 						Sign In
 					</button>
@@ -59,11 +80,17 @@
 			}
 		},
 
+		methods: {
+            onClickLogin(e) {
+                this.formManager.onSubmit()
+			}
+		},
+
 		mounted() {
             this.formManager = new ComptechApp.FormManager(
 				this, 
 				'login', 
-				data => {this.app.Http.redirect()}, 
+				data => {ComptechApp.Http.redirect()}, 
 				data => {console.log(data)}
 			)
         },

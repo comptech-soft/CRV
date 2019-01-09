@@ -55,6 +55,7 @@ class Boot {
         window[name] = {}
         window[name]['Http'] = require('./../Http/Http')
         window[name]['FormManager'] = require('./../FormManager/FormManager')
+        window[name]['CreateMenu'] = require('./../Menus/Create')
     }
 
     LoadLodash() {
