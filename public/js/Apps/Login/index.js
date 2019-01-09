@@ -2149,6 +2149,88 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'main-page'
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/MainPage/Brand.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/MainPage/Brand.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2157,8 +2239,94 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'main-page'
+  methods: {
+    onClick: function onClick(item) {
+      var element = $('#m-brand-dropdown').parent().trigger('click');
+      this.menuOptionClick(item);
+    }
+  }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -2256,6 +2424,86 @@ __webpack_require__.r(__webpack_exports__);
     title: {
       type: String,
       required: true
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Topbar/QuickActions.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Topbar/QuickActions.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: {
+    onClick: function onClick(item) {
+      var element = $('#m-quick-actions-dropdown').parent().trigger('click');
+      this.menuOptionClick(item);
     }
   }
 });
@@ -30357,25 +30605,16 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" "),
               _c("div", { staticClass: "m-content" }, [
-                _vm._v(
-                  "\n                \n                User: " +
-                    _vm._s(_vm.$app.user)
-                ),
-                _c("br"),
-                _vm._v(
-                  "\n                Role: " +
-                    _vm._s(_vm.$app.role) +
-                    "\n\n                "
-                ),
                 _c(
                   "div",
                   {
-                    staticStyle: { "background-color": "#000", color: "yellow" }
+                    staticStyle: {
+                      "background-color": "#000",
+                      color: "yellow",
+                      padding: "60px"
+                    }
                   },
                   [
-                    _vm._v("\n                    Aici bag content"),
-                    _c("br"),
-                    _vm._v(" "),
                     _c(
                       "transition",
                       { attrs: { name: "fade", mode: "out-in" } },
@@ -30430,7 +30669,16 @@ var render = function() {
           [
             _c(
               "a",
-              { staticClass: "m-brand__logo-wrapper", attrs: { href: "#" } },
+              {
+                staticClass: "m-brand__logo-wrapper",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.$router.push({ name: "welcome" })
+                  }
+                }
+              },
               [
                 _c("img", {
                   attrs: {
@@ -30450,7 +30698,120 @@ var render = function() {
                 staticClass:
                   "m-stack__item m-stack__item--middle m-brand__tools"
               },
-              [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)]
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push",
+                    attrs: {
+                      "m-dropdown-toggle": "click",
+                      "aria-expanded": "true",
+                      id: "m-brand-dropdown"
+                    }
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "dropdown-toggle m-dropdown__toggle btn btn-outline-metal m-btn m-btn--icon m-btn--pill",
+                        attrs: { href: "#" }
+                      },
+                      [
+                        _c("span", [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(_vm.$brand.menu.caption) +
+                              "\n                    "
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "m-dropdown__wrapper" }, [
+                      _c("span", {
+                        staticClass:
+                          "m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust"
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "m-dropdown__inner" }, [
+                        _c("div", { staticClass: "m-dropdown__body" }, [
+                          _c("div", { staticClass: "m-dropdown__content" }, [
+                            _c(
+                              "ul",
+                              { staticClass: "m-nav" },
+                              [
+                                _c(
+                                  "li",
+                                  {
+                                    staticClass:
+                                      "m-nav__section m-nav__section--first m--hide"
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "m-nav__section-text" },
+                                      [
+                                        _vm._v(
+                                          "\n                                            " +
+                                            _vm._s(_vm.$brand.menu.caption) +
+                                            "\n                                        "
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _vm._l(_vm.$brand.menu.options, function(item) {
+                                  return _c(
+                                    "li",
+                                    {
+                                      key: "brand-menu-item" + item.name,
+                                      staticClass: "m-nav__item"
+                                    },
+                                    [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "m-nav__link",
+                                          attrs: { href: "#" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.onClick(item)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "m-nav__link-icon flaticon-share"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            { staticClass: "m-nav__link-text" },
+                                            [_vm._v(_vm._s(item.caption))]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                })
+                              ],
+                              2
+                            )
+                          ])
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
             )
           : _vm._e()
       ]
@@ -30458,94 +30819,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push",
-        attrs: { "m-dropdown-toggle": "click", "aria-expanded": "true" }
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass:
-              "dropdown-toggle m-dropdown__toggle btn btn-outline-metal m-btn  m-btn--icon m-btn--pill",
-            attrs: { href: "#" }
-          },
-          [_c("span", [_vm._v("Dashboard")])]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "m-dropdown__wrapper" }, [
-          _c("span", {
-            staticClass:
-              "m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust"
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "m-dropdown__inner" }, [
-            _c("div", { staticClass: "m-dropdown__body" }, [
-              _c("div", { staticClass: "m-dropdown__content" }, [
-                _c("ul", { staticClass: "m-nav" }, [
-                  _c(
-                    "li",
-                    {
-                      staticClass:
-                        "m-nav__section m-nav__section--first m--hide"
-                    },
-                    [
-                      _c("span", { staticClass: "m-nav__section-text" }, [
-                        _vm._v("Quick Menu")
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "m-nav__item" }, [
-                    _c(
-                      "a",
-                      { staticClass: "m-nav__link", attrs: { href: "" } },
-                      [
-                        _c("i", {
-                          staticClass: "m-nav__link-icon flaticon-share"
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-nav__link-text" }, [
-                          _vm._v("Option #1.1")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", {
-                    staticClass: "m-nav__separator m-nav__separator--fit"
-                  }),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "m-nav__item" }, [
-                    _c(
-                      "a",
-                      { staticClass: "m-nav__link", attrs: { href: "" } },
-                      [
-                        _c("i", {
-                          staticClass: "m-nav__link-icon flaticon-chat-1"
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-nav__link-text" }, [
-                          _vm._v("Option #2.1")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -30598,7 +30871,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "m-stack__item m-stack__item--middle m-stack__item--fluid" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light",
+          attrs: { id: "m_header_menu" }
+        },
+        [
+          _c(
+            "ul",
+            { staticClass: "m-menu__nav  m-menu__nav--submenu-arrow" },
+            _vm._l(_vm.$horizontal_menu.menu.options, function(item) {
+              return _c(
+                "li",
+                {
+                  key: "horizontal-menu-item-" + item.name,
+                  staticClass:
+                    "m-menu__item m-menu__item--submenu m-menu__item--rel",
+                  attrs: {
+                    "m-menu-submenu-toggle": "click",
+                    "aria-haspopup": "true"
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.menuOptionClick(item)
+                    }
+                  }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "m-menu__link m-menu__toggle",
+                      attrs: { href: "javascript:;", title: "" }
+                    },
+                    [
+                      _vm.menuOptionHasSubmenu(item)
+                        ? _c("span", { staticClass: "m-menu__item-here" })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "m-menu__link-text" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.caption) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.menuOptionHasSubmenu(item)
+                        ? _c("i", {
+                            staticClass: "m-menu__hor-arrow la la-angle-down"
+                          })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.menuOptionHasSubmenu(item)
+                        ? _c("i", {
+                            staticClass: "m-menu__ver-arrow la la-angle-right"
+                          })
+                        : _vm._e()
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm.menuOptionHasSubmenu(item)
+                    ? _c(
+                        "div",
+                        {
+                          staticClass:
+                            "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left"
+                        },
+                        [
+                          _c("span", {
+                            staticClass: "m-menu__arrow m-menu__arrow--adjust"
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            { staticClass: "m-menu__subnav" },
+                            _vm._l(item.options, function(subitem) {
+                              return _c(
+                                "li",
+                                {
+                                  key:
+                                    "horizontal-menu-subitem-" + subitem.name,
+                                  staticClass: "m-menu__item",
+                                  attrs: { "aria-haspopup": "true" }
+                                },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "m-menu__link",
+                                      attrs: { href: "#" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.menuOptionClick(subitem)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass:
+                                          "m-menu__link-icon flaticon-diagram"
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        { staticClass: "m-menu__link-title" },
+                                        [
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass: "m-menu__link-wrap"
+                                            },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "m-menu__link-text"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n\t\t\t\t\t\t\t\t\t\t\t" +
+                                                      _vm._s(subitem.caption) +
+                                                      "\n\t\t\t\t\t\t\t\t\t\t"
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            }),
+                            0
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]
+              )
+            }),
+            0
+          )
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -30606,2672 +31035,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "button",
       {
-        staticClass: "m-stack__item m-stack__item--middle m-stack__item--fluid"
+        staticClass:
+          "m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light",
+        attrs: { id: "m_aside_header_menu_mobile_close_btn" }
       },
-      [
-        _c(
-          "button",
-          {
-            staticClass:
-              "m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light ",
-            attrs: { id: "m_aside_header_menu_mobile_close_btn" }
-          },
-          [_c("i", { staticClass: "la la-close" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ",
-            attrs: { id: "m_header_menu" }
-          },
-          [
-            _c(
-              "ul",
-              { staticClass: "m-menu__nav  m-menu__nav--submenu-arrow " },
-              [
-                _c(
-                  "li",
-                  {
-                    staticClass: "m-menu__item  m-menu__item--active ",
-                    attrs: { "aria-haspopup": "true" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "m-menu__link ",
-                        attrs: { href: "index.html" }
-                      },
-                      [
-                        _c("span", { staticClass: "m-menu__item-here" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-menu__link-text" }, [
-                          _vm._v("Dashboard")
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "m-menu__item  m-menu__item--submenu m-menu__item--rel",
-                    attrs: {
-                      "m-menu-submenu-toggle": "click",
-                      "aria-haspopup": "true"
-                    }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "m-menu__link m-menu__toggle",
-                        attrs: {
-                          href: "javascript:;",
-                          title: "Non functional dummy link"
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "m-menu__item-here" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-menu__link-text" }, [
-                          _vm._v("Actions")
-                        ]),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__hor-arrow la la-angle-down"
-                        }),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__ver-arrow la la-angle-right"
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left"
-                      },
-                      [
-                        _c("span", {
-                          staticClass: "m-menu__arrow m-menu__arrow--adjust"
-                        }),
-                        _vm._v(" "),
-                        _c("ul", { staticClass: "m-menu__subnav" }, [
-                          _c(
-                            "li",
-                            {
-                              staticClass: "m-menu__item ",
-                              attrs: { "aria-haspopup": "true" }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link ",
-                                  attrs: { href: "inner.html" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-diagram"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-title" },
-                                    [
-                                      _c(
-                                        "span",
-                                        { staticClass: "m-menu__link-wrap" },
-                                        [
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "m-menu__link-text"
-                                            },
-                                            [_vm._v("Generate Reports")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "m-menu__link-badge"
-                                            },
-                                            [
-                                              _c(
-                                                "span",
-                                                {
-                                                  staticClass:
-                                                    "m-badge m-badge--success"
-                                                },
-                                                [_vm._v("2")]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass:
-                                "m-menu__item  m-menu__item--submenu",
-                              attrs: {
-                                "m-menu-submenu-toggle": "hover",
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link m-menu__toggle",
-                                  attrs: {
-                                    href: "javascript:;",
-                                    title: "Non functional dummy link"
-                                  }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-business"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Manage Orders")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__hor-arrow la la-angle-right"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "m-menu__submenu m-menu__submenu--classic m-menu__submenu--right"
-                                },
-                                [
-                                  _c("span", { staticClass: "m-menu__arrow " }),
-                                  _vm._v(" "),
-                                  _c("ul", { staticClass: "m-menu__subnav" }, [
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Latest Orders")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Pending Orders")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Processed Orders")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Delivery Reports")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Payments")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Customers")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass:
-                                "m-menu__item  m-menu__item--submenu",
-                              attrs: {
-                                "m-menu-submenu-toggle": "hover",
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link m-menu__toggle",
-                                  attrs: {
-                                    href: "javascript:;",
-                                    title: "Non functional dummy link"
-                                  }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-chat-1"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Customer Feedbacks")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__hor-arrow la la-angle-right"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "m-menu__submenu m-menu__submenu--classic m-menu__submenu--right"
-                                },
-                                [
-                                  _c("span", { staticClass: "m-menu__arrow " }),
-                                  _vm._v(" "),
-                                  _c("ul", { staticClass: "m-menu__subnav" }, [
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Customer Feedbacks")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Supplier Feedbacks")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Reviewed Feedbacks")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Resolved Feedbacks")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Feedback Reports")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass: "m-menu__item ",
-                              attrs: {
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link ",
-                                  attrs: { href: "inner.html" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-users"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Register Member")]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "m-menu__item  m-menu__item--submenu m-menu__item--rel",
-                    attrs: {
-                      "m-menu-submenu-toggle": "click",
-                      "m-menu-link-redirect": "1",
-                      "aria-haspopup": "true"
-                    }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "m-menu__link m-menu__toggle",
-                        attrs: {
-                          href: "javascript:;",
-                          title: "Non functional dummy link"
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "m-menu__item-here" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-menu__link-text" }, [
-                          _vm._v("Reports")
-                        ]),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__hor-arrow la la-angle-down"
-                        }),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__ver-arrow la la-angle-right"
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "m-menu__submenu  m-menu__submenu--fixed m-menu__submenu--left",
-                        staticStyle: { width: "600px" }
-                      },
-                      [
-                        _c("span", {
-                          staticClass: "m-menu__arrow m-menu__arrow--adjust"
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "m-menu__subnav" }, [
-                          _c("ul", { staticClass: "m-menu__content" }, [
-                            _c("li", { staticClass: "m-menu__item" }, [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "m-menu__heading m-menu__toggle"
-                                },
-                                [
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Finance Reports")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "m-menu__inner" }, [
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-map"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Annual Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-user"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("HR Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-clipboard"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("IPO Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-graphic-1"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Finance Margins")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-graphic-2"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Revenue Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "m-menu__item" }, [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "m-menu__heading m-menu__toggle"
-                                },
-                                [
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Project Reports")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "m-menu__inner" }, [
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Coca Cola CRM")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [
-                                            _vm._v(
-                                              "Delta Airlines Booking Site"
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Malibu Accounting")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Vineseed Website Rewamp")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Zircon Mobile App")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Mercury CMS")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "m-menu__item  m-menu__item--submenu",
-                    attrs: {
-                      "m-menu-submenu-toggle": "click",
-                      "m-menu-link-redirect": "1",
-                      "aria-haspopup": "true"
-                    }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "m-menu__link m-menu__toggle",
-                        attrs: {
-                          href: "javascript:;",
-                          title: "Non functional dummy link"
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "m-menu__item-here" }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-menu__link-text" }, [
-                          _vm._v("Orders")
-                        ]),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__hor-arrow la la-angle-down"
-                        }),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__ver-arrow la la-angle-right"
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "m-menu__submenu  m-menu__submenu--fixed-xl m-menu__submenu--center"
-                      },
-                      [
-                        _c("span", {
-                          staticClass: "m-menu__arrow m-menu__arrow--adjust"
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "m-menu__subnav" }, [
-                          _c("ul", { staticClass: "m-menu__content" }, [
-                            _c("li", { staticClass: "m-menu__item" }, [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "m-menu__heading m-menu__toggle"
-                                },
-                                [
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Finance Reports")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "m-menu__inner" }, [
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-map"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Annual Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-user"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("HR Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-clipboard"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("IPO Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-graphic-1"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Finance Margins")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c("i", {
-                                          staticClass:
-                                            "m-menu__link-icon flaticon-graphic-2"
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Revenue Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "m-menu__item" }, [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "m-menu__heading m-menu__toggle"
-                                },
-                                [
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Project Reports")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "m-menu__inner" }, [
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Coca Cola CRM")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [
-                                            _vm._v(
-                                              "Delta Airlines Booking Site"
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Malibu Accounting")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Vineseed Website Rewamp")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Zircon Mobile App")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--line"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Mercury CMS")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "m-menu__item" }, [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "m-menu__heading m-menu__toggle"
-                                },
-                                [
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("HR Reports")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "m-menu__inner" }, [
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--dot"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Staff Directory")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--dot"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Client Directory")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--dot"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Salary Reports")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--dot"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Staff Payslips")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--dot"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Corporate Expenses")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "i",
-                                          {
-                                            staticClass:
-                                              "m-menu__link-bullet m-menu__link-bullet--dot"
-                                          },
-                                          [_c("span")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Project Expenses")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("li", { staticClass: "m-menu__item" }, [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass: "m-menu__heading m-menu__toggle"
-                                },
-                                [
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Reporting Apps")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("ul", { staticClass: "m-menu__inner" }, [
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Report Adjusments")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Sources & Mediums")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Reporting Settings")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Conversions")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Report Flows")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "li",
-                                  {
-                                    staticClass: "m-menu__item ",
-                                    attrs: {
-                                      "m-menu-link-redirect": "1",
-                                      "aria-haspopup": "true"
-                                    }
-                                  },
-                                  [
-                                    _c(
-                                      "a",
-                                      {
-                                        staticClass: "m-menu__link ",
-                                        attrs: { href: "inner.html" }
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "m-menu__link-text" },
-                                          [_vm._v("Audit & Logs")]
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "m-menu__item  m-menu__item--submenu m-menu__item--rel m-menu__item--more m-menu__item--icon-only",
-                    attrs: {
-                      "m-menu-submenu-toggle": "click",
-                      "m-menu-link-redirect": "1",
-                      "aria-haspopup": "true"
-                    }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "m-menu__link m-menu__toggle",
-                        attrs: {
-                          href: "javascript:;",
-                          title: "Non functional dummy link"
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "m-menu__item-here" }),
-                        _vm._v(" "),
-                        _c("i", {
-                          staticClass: "m-menu__link-icon flaticon-more-v3"
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "m-menu__link-text" })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left m-menu__submenu--pull"
-                      },
-                      [
-                        _c("span", {
-                          staticClass: "m-menu__arrow m-menu__arrow--adjust"
-                        }),
-                        _vm._v(" "),
-                        _c("ul", { staticClass: "m-menu__subnav" }, [
-                          _c(
-                            "li",
-                            {
-                              staticClass: "m-menu__item ",
-                              attrs: {
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link ",
-                                  attrs: { href: "inner.html" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-business"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("eCommerce")]
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass:
-                                "m-menu__item  m-menu__item--submenu",
-                              attrs: {
-                                "m-menu-submenu-toggle": "hover",
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link m-menu__toggle",
-                                  attrs: { href: "crud/datatable_v1.html" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-computer"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Audience")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__hor-arrow la la-angle-right"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "m-menu__submenu m-menu__submenu--classic m-menu__submenu--right"
-                                },
-                                [
-                                  _c("span", { staticClass: "m-menu__arrow " }),
-                                  _vm._v(" "),
-                                  _c("ul", { staticClass: "m-menu__subnav" }, [
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-users"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Active Users")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-interface-1"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("User Explorer")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-lifebuoy"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Users Flows")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-graphic-1"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Market Segments")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-graphic"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("User Reports")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass: "m-menu__item ",
-                              attrs: {
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link ",
-                                  attrs: { href: "inner.html" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-map"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Marketing")]
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass: "m-menu__item ",
-                              attrs: {
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link ",
-                                  attrs: { href: "inner.html" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-graphic-2"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-title" },
-                                    [
-                                      _c(
-                                        "span",
-                                        { staticClass: "m-menu__link-wrap" },
-                                        [
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "m-menu__link-text"
-                                            },
-                                            [_vm._v("Campaigns")]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            {
-                                              staticClass: "m-menu__link-badge"
-                                            },
-                                            [
-                                              _c(
-                                                "span",
-                                                {
-                                                  staticClass:
-                                                    "m-badge m-badge--success"
-                                                },
-                                                [_vm._v("3")]
-                                              )
-                                            ]
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "li",
-                            {
-                              staticClass:
-                                "m-menu__item  m-menu__item--submenu",
-                              attrs: {
-                                "m-menu-submenu-toggle": "hover",
-                                "m-menu-link-redirect": "1",
-                                "aria-haspopup": "true"
-                              }
-                            },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "m-menu__link m-menu__toggle",
-                                  attrs: {
-                                    href: "javascript:;",
-                                    title: "Non functional dummy link"
-                                  }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__link-icon flaticon-infinity"
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "m-menu__link-text" },
-                                    [_vm._v("Cloud Manager")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__hor-arrow la la-angle-right"
-                                  }),
-                                  _vm._v(" "),
-                                  _c("i", {
-                                    staticClass:
-                                      "m-menu__ver-arrow la la-angle-right"
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass:
-                                    "m-menu__submenu m-menu__submenu--classic m-menu__submenu--left"
-                                },
-                                [
-                                  _c("span", { staticClass: "m-menu__arrow " }),
-                                  _vm._v(" "),
-                                  _c("ul", { staticClass: "m-menu__subnav" }, [
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-add"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass:
-                                                  "m-menu__link-title"
-                                              },
-                                              [
-                                                _c(
-                                                  "span",
-                                                  {
-                                                    staticClass:
-                                                      "m-menu__link-wrap"
-                                                  },
-                                                  [
-                                                    _c(
-                                                      "span",
-                                                      {
-                                                        staticClass:
-                                                          "m-menu__link-text"
-                                                      },
-                                                      [_vm._v("File Upload")]
-                                                    ),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "span",
-                                                      {
-                                                        staticClass:
-                                                          "m-menu__link-badge"
-                                                      },
-                                                      [
-                                                        _c(
-                                                          "span",
-                                                          {
-                                                            staticClass:
-                                                              "m-badge m-badge--danger"
-                                                          },
-                                                          [_vm._v("3")]
-                                                        )
-                                                      ]
-                                                    )
-                                                  ]
-                                                )
-                                              ]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-signs-1"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("File Attributes")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-folder"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("Folders")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "li",
-                                      {
-                                        staticClass: "m-menu__item ",
-                                        attrs: {
-                                          "m-menu-link-redirect": "1",
-                                          "aria-haspopup": "true"
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "a",
-                                          {
-                                            staticClass: "m-menu__link ",
-                                            attrs: { href: "inner.html" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "m-menu__link-icon flaticon-cogwheel-2"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              {
-                                                staticClass: "m-menu__link-text"
-                                              },
-                                              [_vm._v("System Settings")]
-                                            )
-                                          ]
-                                        )
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          )
-                        ])
-                      ]
-                    )
-                  ]
-                )
-              ]
-            )
-          ]
-        )
-      ]
+      [_c("i", { staticClass: "la la-close" })]
     )
   }
 ]
@@ -33637,7 +31407,7 @@ var render = function() {
               [
                 _c("user-profile"),
                 _vm._v(" "),
-                _vm.$app.user ? _c("notifications") : _vm._e(),
+                _vm.$app.user && false ? _c("notifications") : _vm._e(),
                 _vm._v(" "),
                 _vm.$app.user ? _c("quick-actions") : _vm._e(),
                 _vm._v(" "),
@@ -34285,7 +32055,7 @@ var render = function() {
     {
       staticClass:
         "m-nav__item m-topbar__quick-actions m-topbar__quick-actions--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push m-dropdown--mobile-full-width m-dropdown--skin-light",
-      attrs: { "m-dropdown-toggle": "click" }
+      attrs: { "m-dropdown-toggle": "click", id: "m-quick-actions-dropdown" }
     },
     [
       _vm._m(0),
@@ -34311,16 +32081,86 @@ var render = function() {
             },
             [
               _c("span", { staticClass: "m-dropdown__header-title" }, [
-                _vm._v("Quick Actions")
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.$quick_actions.menu.caption) +
+                    "\n                "
+                )
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "m-dropdown__header-subtitle" }, [
-                _vm._v("Shortcuts")
-              ])
+              false
+                ? undefined
+                : _vm._e()
             ]
           ),
           _vm._v(" "),
-          _vm._m(1)
+          _c(
+            "div",
+            { staticClass: "m-dropdown__body m-dropdown__body--paddingless" },
+            [
+              _c("div", { staticClass: "m-dropdown__content" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "m-scrollable",
+                    attrs: {
+                      "data-scrollable": "false",
+                      "data-height": "380",
+                      "data-mobile-height": "200"
+                    }
+                  },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "m-nav-grid m-nav-grid--skin-light" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "m-nav-grid__row" },
+                          _vm._l(_vm.$quick_actions.menu.options, function(
+                            item
+                          ) {
+                            return _c(
+                              "a",
+                              {
+                                key: "quick-action-item-" + item.name,
+                                staticClass: "m-nav-grid__item",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    _vm.onClick(item)
+                                  }
+                                }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "m-nav-grid__icon flaticon-file"
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  { staticClass: "m-nav-grid__text" },
+                                  [
+                                    _vm._v(
+                                      "\n                                        " +
+                                        _vm._s(item.caption) +
+                                        "\n                                    "
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          }),
+                          0
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
         ])
       ])
     ]
@@ -34344,93 +32184,6 @@ var staticRenderFns = [
           _c("span", { staticClass: "m-nav__link-icon-wrapper" }, [
             _c("i", { staticClass: "flaticon-share" })
           ])
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "m-dropdown__body m-dropdown__body--paddingless" },
-      [
-        _c("div", { staticClass: "m-dropdown__content" }, [
-          _c(
-            "div",
-            {
-              staticClass: "m-scrollable",
-              attrs: {
-                "data-scrollable": "false",
-                "data-height": "380",
-                "data-mobile-height": "200"
-              }
-            },
-            [
-              _c("div", { staticClass: "m-nav-grid m-nav-grid--skin-light" }, [
-                _c("div", { staticClass: "m-nav-grid__row" }, [
-                  _c(
-                    "a",
-                    { staticClass: "m-nav-grid__item", attrs: { href: "#" } },
-                    [
-                      _c("i", {
-                        staticClass: "m-nav-grid__icon flaticon-file"
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "m-nav-grid__text" }, [
-                        _vm._v("Generate Report")
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "m-nav-grid__item", attrs: { href: "#" } },
-                    [
-                      _c("i", {
-                        staticClass: "m-nav-grid__icon flaticon-time"
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "m-nav-grid__text" }, [
-                        _vm._v("Add New Event")
-                      ])
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "m-nav-grid__row" }, [
-                  _c(
-                    "a",
-                    { staticClass: "m-nav-grid__item", attrs: { href: "#" } },
-                    [
-                      _c("i", {
-                        staticClass: "m-nav-grid__icon flaticon-folder"
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "m-nav-grid__text" }, [
-                        _vm._v("Create New Task")
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "m-nav-grid__item", attrs: { href: "#" } },
-                    [
-                      _c("i", {
-                        staticClass: "m-nav-grid__icon flaticon-clipboard"
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "m-nav-grid__text" }, [
-                        _vm._v("Completed Tasks")
-                      ])
-                    ]
-                  )
-                ])
-              ])
-            ]
-          )
         ])
       ]
     )
@@ -49603,6 +47356,58 @@ ComptechApp.vue = boot.Mount('#crv-app');
 
 /***/ }),
 
+/***/ "./resources/js/Apps/Menus/Brand.js":
+/*!******************************************!*\
+  !*** ./resources/js/Apps/Menus/Brand.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (state) {
+  var menu = ComptechApp.CreateMenu('brand', {
+    caption: 'Barnd menu'
+  });
+  var options = [{
+    name: 'about',
+    caption: 'Despre',
+    route: {
+      name: 'about'
+    }
+  }, {
+    name: 'privacy',
+    caption: 'Confidențialitate',
+    route: {
+      name: 'privacy'
+    }
+  }, {
+    name: 'terms',
+    caption: 'Termeni și condiții',
+    route: {
+      name: 'terms'
+    }
+  }, {
+    name: 'purchase',
+    caption: 'Prețuri',
+    route: {
+      name: 'purchase'
+    }
+  }];
+
+  _.each(options, function (item) {
+    menu.AddOption(item.name, ComptechApp.CreateMenu(item.name, {
+      caption: item.caption,
+      clicktype: 'click',
+      onClick: function onClick(v) {
+        return v.$router.push(item.route);
+      }
+    }));
+  });
+
+  state.brand.menu = menu;
+};
+
+/***/ }),
+
 /***/ "./resources/js/Apps/Menus/Footer.js":
 /*!*******************************************!*\
   !*** ./resources/js/Apps/Menus/Footer.js ***!
@@ -49646,42 +47451,131 @@ module.exports = function (state) {
         return v.$router.push(item.route);
       }
     }));
-  }); // menu
-  //     .AddOption(
-  //         'about',
-  //         ComptechApp.CreateMenu('about', {
-  //             caption: 'Despre',
-  //             clicktype: 'click',
-  //             onClick: v => v.$router.push({name: 'about'})
-  //         })
-  //     )
-  //     .AddOption(
-  //         'privacy',
-  //         ComptechApp.CreateMenu('privacy', {
-  //             caption: 'Confidențialitate',
-  //             clicktype: 'click',
-  //             onClick: v => v.$router.push({name: 'privacy'})
-  //         })
-  //     )
-  //     .AddOption(
-  //         'terms-and-conditions',
-  //         ComptechApp.CreateMenu('terms-and-conditions', {
-  //             caption: 'Termeni și condiții',
-  //             clicktype: 'click',
-  //             onClick: v => v.$router.push({name: 'terms'})
-  //         })
-  //     )
-  //     .AddOption(
-  //         'purchase',
-  //         ComptechApp.CreateMenu('purchase', {
-  //             caption: 'Prețuri',
-  //             clicktype: 'click',
-  //             onClick: v => v.$router.push({name: 'purchase'})
-  //         })
-  //     )
-
+  });
 
   state.footer.menu = menu;
+};
+
+/***/ }),
+
+/***/ "./resources/js/Apps/Menus/Horizontal.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Apps/Menus/Horizontal.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (state) {
+  var menu = ComptechApp.CreateMenu('brand', {
+    caption: 'Horizontal menu'
+  });
+  var options = [{
+    name: 'home',
+    caption: 'Home',
+    route: {
+      name: 'welcome'
+    }
+  }, {
+    name: 'option-1',
+    caption: 'Optiunea #1',
+    route: null,
+    options: [{
+      name: 'terms',
+      caption: 'Termeni și condiții',
+      route: {
+        name: 'terms'
+      }
+    }, {
+      name: 'purchase',
+      caption: 'Prețuri',
+      route: {
+        name: 'purchase'
+      }
+    }]
+  }];
+
+  _.each(options, function (item) {
+    var params = {
+      caption: item.caption,
+      clicktype: 'click'
+    };
+
+    if (item.hasOwnProperty('route') && item.route) {
+      params['onClick'] = function (v) {
+        return v.$router.push(item.route);
+      };
+    }
+
+    var submenu = ComptechApp.CreateMenu(item.name, params);
+
+    if (item.hasOwnProperty('options')) {
+      _.each(item.options, function (subitem) {
+        submenu.AddOption(subitem.name, ComptechApp.CreateMenu(subitem.name, {
+          caption: subitem.caption,
+          clicktype: 'click',
+          onClick: function onClick(v) {
+            return v.$router.push(subitem.route);
+          }
+        }));
+      });
+    }
+
+    menu.AddOption(item.name, submenu);
+  });
+
+  state.horizontal_menu.menu = menu;
+};
+
+/***/ }),
+
+/***/ "./resources/js/Apps/Menus/QuickActions.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Apps/Menus/QuickActions.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (state) {
+  var menu = ComptechApp.CreateMenu('brand', {
+    caption: 'Acțiuni rapide'
+  });
+  var options = [{
+    name: 'about',
+    caption: 'Despre',
+    route: {
+      name: 'about'
+    }
+  }, {
+    name: 'privacy',
+    caption: 'Confidențialitate',
+    route: {
+      name: 'privacy'
+    }
+  }, {
+    name: 'terms',
+    caption: 'Termeni și condiții',
+    route: {
+      name: 'terms'
+    }
+  }, {
+    name: 'purchase',
+    caption: 'Prețuri',
+    route: {
+      name: 'purchase'
+    }
+  }];
+
+  _.each(options, function (item) {
+    menu.AddOption(item.name, ComptechApp.CreateMenu(item.name, {
+      caption: item.caption,
+      clicktype: 'click',
+      onClick: function onClick(v) {
+        return v.$router.push(item.route);
+      }
+    }));
+  });
+
+  state.quick_actions.menu = menu;
 };
 
 /***/ }),
@@ -49739,6 +47633,15 @@ module.exports = {
 
     return state.config.base_url + '/';
   },
+  brand: function brand(state) {
+    return state.brand;
+  },
+  quick_actions: function quick_actions(state) {
+    return state.quick_actions;
+  },
+  horizontal_menu: function horizontal_menu(state) {
+    return state.horizontal_menu;
+  },
   footer: function footer(state) {
     return state.footer;
   } // farm: state => state.farm,
@@ -49756,7 +47659,10 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var FooterMenu = __webpack_require__(/*! ./../Menus/Footer */ "./resources/js/Apps/Menus/Footer.js");
+var FooterMenu = __webpack_require__(/*! ./../Menus/Footer */ "./resources/js/Apps/Menus/Footer.js"),
+    BrandMenu = __webpack_require__(/*! ./../Menus/Brand */ "./resources/js/Apps/Menus/Brand.js"),
+    QuickActionsMenu = __webpack_require__(/*! ./../Menus/QuickActions */ "./resources/js/Apps/Menus/QuickActions.js"),
+    HorizontalMenu = __webpack_require__(/*! ./../Menus/Horizontal */ "./resources/js/Apps/Menus/Horizontal.js");
 
 module.exports = {
   getConfig: function getConfig(state) {
@@ -49769,12 +47675,24 @@ module.exports = {
       state.user = r.data.user;
       state.config = r.data.config;
       state.role = r.data.role;
-      /**
-       * Creez meniul footer
-       */
+      /** Creez meniul brand */
+
+      BrandMenu(state);
+      /** Creez meniul quick actions */
+
+      QuickActionsMenu(state);
+      /** Creez meniul orizontal */
+
+      HorizontalMenu(state);
+      /** Creez meniul footer */
 
       FooterMenu(state);
       state.mounted = true;
+      var i = setInterval(function () {
+        mLayout.init();
+        mApp.init({});
+        clearInterval(i);
+      }, 2000);
     }).catch(function (error) {
       console.log('ERROR.Store Mutations::getConfig()');
       console.log(error);
@@ -49796,6 +47714,31 @@ module.exports = {
   config: null,
   role: null,
   mounted: false,
+
+  /**
+   * Continut "Brand" din top menu stanga
+   */
+  brand: {
+    menu: null
+  },
+
+  /**
+   * Actiuni rapid din top menu dreapta
+   */
+  quick_actions: {
+    menu: null
+  },
+
+  /**
+   * Meniul orizontal (a doua banda din header)
+   */
+  horizontal_menu: {
+    menu: null
+  },
+
+  /**
+   * Continut footer
+   */
   footer: {
     menu: null // farm: {
     //     record: null,
@@ -51292,15 +49235,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Brand_vue_vue_type_template_id_4de3858b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Brand.vue?vue&type=template&id=4de3858b& */ "./resources/js/Components/MainPage/Brand.vue?vue&type=template&id=4de3858b&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Brand_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Brand.vue?vue&type=script&lang=js& */ "./resources/js/Components/MainPage/Brand.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Brand_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Brand_vue_vue_type_template_id_4de3858b___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Brand_vue_vue_type_template_id_4de3858b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -51314,6 +49259,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/Components/MainPage/Brand.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/MainPage/Brand.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Components/MainPage/Brand.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Brand_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Brand.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/MainPage/Brand.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Brand_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -51345,15 +49304,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HorizontalMenu_vue_vue_type_template_id_115e734f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HorizontalMenu.vue?vue&type=template&id=115e734f& */ "./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=template&id=115e734f&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HorizontalMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HorizontalMenu.vue?vue&type=script&lang=js& */ "./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HorizontalMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HorizontalMenu_vue_vue_type_template_id_115e734f___WEBPACK_IMPORTED_MODULE_0__["render"],
   _HorizontalMenu_vue_vue_type_template_id_115e734f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -51367,6 +49328,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/Components/MainPage/HorizontalMenu.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HorizontalMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./HorizontalMenu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/MainPage/HorizontalMenu.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HorizontalMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -51854,15 +49829,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _QuickActions_vue_vue_type_template_id_64a76fc6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuickActions.vue?vue&type=template&id=64a76fc6& */ "./resources/js/Components/Topbar/QuickActions.vue?vue&type=template&id=64a76fc6&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _QuickActions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuickActions.vue?vue&type=script&lang=js& */ "./resources/js/Components/Topbar/QuickActions.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _QuickActions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _QuickActions_vue_vue_type_template_id_64a76fc6___WEBPACK_IMPORTED_MODULE_0__["render"],
   _QuickActions_vue_vue_type_template_id_64a76fc6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -51876,6 +49853,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/Components/Topbar/QuickActions.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Topbar/QuickActions.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/Components/Topbar/QuickActions.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuickActions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./QuickActions.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Topbar/QuickActions.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuickActions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -52038,11 +50029,20 @@ var computed = {
       config: this.$store.getters.config
     };
   },
-  $datetime: function $datetime() {
-    return ComptechApp.Datetime;
+  $brand: function $brand() {
+    return this.$store.getters.brand;
+  },
+  $quick_actions: function $quick_actions() {
+    return this.$store.getters.quick_actions;
+  },
+  $horizontal_menu: function $horizontal_menu() {
+    return this.$store.getters.horizontal_menu;
   },
   $footer: function $footer() {
     return this.$store.getters.footer;
+  },
+  $datetime: function $datetime() {
+    return ComptechApp.Datetime;
   }
 };
 var methods = {
@@ -52077,7 +50077,10 @@ var methods = {
           break;
 
         case 'click':
-          option.onClick(this);
+          if (_.isFunction(option.onClick)) {
+            option.onClick(this);
+          }
+
           break;
 
         case 'event':
@@ -52085,12 +50088,18 @@ var methods = {
           break;
 
         case 'both':
-          option.onClick(this);
+          if (_.isFunction(option.onClick)) {
+            option.onClick(this);
+          }
+
           this.$emit(option.event, option);
       }
     } catch (error) {
       console.log(error);
     }
+  },
+  menuOptionHasSubmenu: function menuOptionHasSubmenu(option) {
+    return !_.isEmpty(option.options);
   }
 };
 module.exports = {

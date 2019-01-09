@@ -8,8 +8,9 @@
                     </user-profile>
 
                     <!-- doar daca avem user logat -->
+                    <!-- deocamdata NU folosesc notificarile -->
                     <notifications
-                        v-if="$app.user"
+                        v-if="$app.user && false"
                     >
                     </notifications>
 

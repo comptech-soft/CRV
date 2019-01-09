@@ -1,6 +1,6 @@
 module.exports = (state) => {
 
-    let menu = ComptechApp.CreateMenu('footer')
+    let menu = ComptechApp.CreateMenu('brand', {caption: 'Acțiuni rapide'})
     let options = [
         {
             name: 'about',
@@ -32,5 +32,5 @@ module.exports = (state) => {
         }))
     })
 
-    state.footer.menu = menu
+    state.quick_actions.menu = menu
 }

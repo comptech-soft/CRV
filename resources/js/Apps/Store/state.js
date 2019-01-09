@@ -8,9 +8,35 @@ module.exports = {
 
     mounted: false,
 
+    /**
+     * Continut "Brand" din top menu stanga
+     */
+    brand: {
+        menu: null,
+    },
+
+    /**
+     * Actiuni rapid din top menu dreapta
+     */
+    quick_actions: {
+        menu: null,
+    },
+
+    /**
+     * Meniul orizontal (a doua banda din header)
+     */
+    horizontal_menu: {
+        menu: null,
+    }, 
+
+    /**
+     * Continut footer
+     */
     footer: {
         menu: null,
     }
+
+    
 
     // farm: {
     //     record: null,

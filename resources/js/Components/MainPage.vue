@@ -4,7 +4,6 @@
             <div class="m-header__top">
                 <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
                     <div class="m-stack m-stack--ver m-stack--desktop">
-
                         <brand>
                         </brand>
 
@@ -34,21 +33,15 @@
 
                 <!-- doar daca avem user logat -->
                 <transition name="fade" mode="out-in" v-if="$app.user">
-                    <router-view name="subheader">
-                        
+                    <router-view name="subheader">                        
                     </router-view>
                 </transition>
                 
+                <!-- content -->
                 <div class="m-content">
-                    
-                    User: {{ $app.user }}<br/>
-                    Role: {{ $app.role }}
-
-                    <div style="background-color: #000; color: yellow">
-                        Aici bag content<br/>
+                    <div style="background-color: #000; color: yellow; padding: 60px">
                         <transition name="fade" mode="out-in">
                             <router-view>
-                                
                             </router-view>
                         </transition>
                     </div>

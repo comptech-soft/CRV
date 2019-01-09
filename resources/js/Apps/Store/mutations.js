@@ -1,4 +1,8 @@
-const FooterMenu = require('./../Menus/Footer')
+const 
+    FooterMenu = require('./../Menus/Footer'),
+    BrandMenu = require('./../Menus/Brand'),
+    QuickActionsMenu = require('./../Menus/QuickActions'),
+    HorizontalMenu = require('./../Menus/Horizontal')
 
 module.exports = {
 
@@ -14,12 +18,28 @@ module.exports = {
             state.config = r.data.config
             state.role = r.data.role
 
-            /**
-             * Creez meniul footer
-             */
+            /** Creez meniul brand */
+            BrandMenu(state)
+
+            /** Creez meniul quick actions */
+            QuickActionsMenu(state)
+
+            /** Creez meniul orizontal */
+            HorizontalMenu(state)
+
+            /** Creez meniul footer */
             FooterMenu(state)
 
             state.mounted = true
+
+            let i = setInterval( () => {
+
+                mLayout.init()
+                mApp.init({})
+
+                clearInterval(i);
+            
+            }, 2000)
         })
         .catch( error => {
             console.log('ERROR.Store Mutations::getConfig()')

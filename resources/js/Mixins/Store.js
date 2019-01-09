@@ -11,12 +11,24 @@ const computed = {
         }
     },
 
-    $datetime() {
-        return ComptechApp.Datetime
+    $brand() {
+        return this.$store.getters.brand
+    },
+
+    $quick_actions() {
+        return this.$store.getters.quick_actions
+    },
+
+    $horizontal_menu() {
+        return this.$store.getters.horizontal_menu
     },
 
     $footer() {
         return this.$store.getters.footer
+    },
+
+    $datetime() {
+        return ComptechApp.Datetime
     },
     
 }
@@ -47,7 +59,6 @@ const methods = {
     },
 
     menuOptionClick(option) {
-        console.log(option.clicktype)
         try
         {
             switch(option.clicktype)
@@ -55,13 +66,19 @@ const methods = {
                 case 'nothing':
                     break
                 case 'click': 
-                    option.onClick(this)
+                    if( _.isFunction(option.onClick) )
+                    {
+                        option.onClick(this)
+                    }
                     break
                 case 'event':
                     this.$emit(option.event, option)
                     break
                 case 'both': 
-                    option.onClick(this)
+                    if( _.isFunction(option.onClick) )
+                    {
+                        option.onClick(this)
+                    }
                     this.$emit(option.event, option)
             }
         }
@@ -69,6 +86,10 @@ const methods = {
         {
             console.log(error)
         }
+    },
+
+    menuOptionHasSubmenu(option) {
+        return ! _.isEmpty(option.options)
     }
 }
 

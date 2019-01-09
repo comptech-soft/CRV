@@ -22,7 +22,15 @@ module.exports = {
         return state.config.base_url + '/'
     },
 
-    footer: state => state.footer
+    brand: state => state.brand,
+
+    quick_actions: state => state.quick_actions,
+    
+    horizontal_menu: state => state.horizontal_menu,
+
+    footer: state => state.footer,
+
+    
 
     // farm: state => state.farm,
 
