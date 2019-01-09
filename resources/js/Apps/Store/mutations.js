@@ -1,3 +1,5 @@
+const FooterMenu = require('./../Menus/Footer')
+
 module.exports = {
 
     getConfig(state) {
@@ -11,6 +13,12 @@ module.exports = {
             state.user = r.data.user
             state.config = r.data.config
             state.role = r.data.role
+
+            /**
+             * Creez meniul footer
+             */
+            FooterMenu(state)
+
             state.mounted = true
         })
         .catch( error => {

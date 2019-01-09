@@ -39,8 +39,12 @@
                             <img :src="$app.url + '/metronic/media/img/users/user4.jpg'" class="m--img-rounded m--marginless" alt="" />
                         </div>
                         <div class="m-card-user__details">
-                            <span class="m-card-user__name m--font-weight-500">Mark Andre</span>
-                            <a href="" class="m-card-user__email m--font-weight-300 m-link">mark.andre@gmail.com</a>
+                            <span class="m-card-user__name m--font-weight-500">
+                                {{ $app.user.full_name }}
+                            </span>
+                            <a href="" class="m-card-user__email m--font-weight-300 m-link">
+                                {{ $app.user.email }}
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +78,13 @@
                             </li>
                             
                             <li class="m-nav__item">
-                            <a href="snippets/pages/user/login-1.html" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
+                                <a 
+                                    href="#" 
+                                    class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder"
+                                    @click.prevent="onClickLogout"
+                                >
+                                    Logout
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -89,6 +99,23 @@ export default {
     methods: {
         onClickLogin() {
             ComptechApp.Http.redirect(100, this.$app.url + 'login')
+        },
+
+        onClickLogout() {
+            try
+            {
+                return axios.request({method: 'post', url: 'logout', data: {}})
+                .then( r => ComptechApp.Http.redirect(100, this.$app.url) )
+                .catch( error => {
+                    console.log('ERROR. Auth::logout()')
+                    console.log(error)
+                })
+            }
+            catch(error)
+            {
+                console.log('ERROR. Auth::logout()')
+                console.log(error)
+            }
         }
     }    
 }

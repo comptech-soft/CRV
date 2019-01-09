@@ -15,7 +15,7 @@ class IsAuthenticated
         {
             return $next($request);
         }
-        return redirect( route(config('comptechsoft.users.routes.welcome')) );
+        return redirect( route('welcome') );
     }
 
 }

@@ -22,6 +22,8 @@ module.exports = {
         return state.config.base_url + '/'
     },
 
+    footer: state => state.footer
+
     // farm: state => state.farm,
 
     // animal: state => state.animal,

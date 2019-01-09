@@ -1,6 +1,6 @@
 <?php
 
-namespace Comptechsoft\Helpers\Models\Cartalyst\Users\Traits;
+namespace App\Models\Cartalyst\Users\Traits;
 
 trait Attributes
 {

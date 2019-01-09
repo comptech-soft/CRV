@@ -8,6 +8,10 @@ module.exports = {
 
     mounted: false,
 
+    footer: {
+        menu: null,
+    }
+
     // farm: {
     //     record: null,
     //     loading: false,

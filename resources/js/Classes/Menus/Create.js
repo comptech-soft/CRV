@@ -1,6 +1,6 @@
 const Menu = require('./Menu')
 
-module.exports = (name, properties, vue = null) => {
+module.exports = (name, properties = {}, vue = null) => {
 
     let menu = new Menu(name, vue)
     let map = {

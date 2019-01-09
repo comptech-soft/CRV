@@ -5,7 +5,8 @@ const boot = new Boot('ComptechApp', {
     store: require('./../Store/~store'),
     mixins: [
         require('./../../Mixins/Store'),
-    ]
+    ],
+    routes: require('./../Routes/~routes')
 })
 
 ComptechApp.vue = boot.Mount('#crv-app')

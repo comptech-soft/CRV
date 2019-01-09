@@ -45,6 +45,12 @@ class Boot {
             this.store = new Vuex.Store(options.store)
         }
 
+        /** Create the router and attach to Vue */
+        if( options.hasOwnProperty('routes') )
+        {
+            this.router = new VueRouter({routes: options.routes})
+        }
+
         /** Vue gloval mixins */
         if( options.hasOwnProperty('mixins') )
         {
@@ -54,6 +60,7 @@ class Boot {
         /** Create app  */
         window[name] = {}
         window[name]['Http'] = require('./../Http/Http')
+        window[name]['Datetime'] = require('./../Datetime/Datetime')
         window[name]['FormManager'] = require('./../FormManager/FormManager')
         window[name]['CreateMenu'] = require('./../Menus/Create')
     }
@@ -82,7 +89,6 @@ class Boot {
     }
 
     LoadPlugins() {
-
         for(let i in this.plugins)
         {
             if(! window.hasOwnProperty(this.plugins[i].key))
@@ -110,6 +116,7 @@ class Boot {
         return new Vue({
             el,
             store: this.store,
+            router: this.router,
             mounted() {
                 this.$store.commit('getConfig')
             }

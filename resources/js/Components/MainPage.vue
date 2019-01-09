@@ -33,15 +33,25 @@
             <div class="m-grid__item m-grid__item--fluid m-wrapper">
 
                 <!-- doar daca avem user logat -->
-                <sub-header
-                    v-if="$app.user"
-                >
-                </sub-header>
+                <transition name="fade" mode="out-in" v-if="$app.user">
+                    <router-view name="subheader">
+                        
+                    </router-view>
+                </transition>
                 
                 <div class="m-content">
                     
                     User: {{ $app.user }}<br/>
                     Role: {{ $app.role }}
+
+                    <div style="background-color: #000; color: yellow">
+                        Aici bag content<br/>
+                        <transition name="fade" mode="out-in">
+                            <router-view>
+                                
+                            </router-view>
+                        </transition>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,3 +60,19 @@
         </page-footer>
     </div>
 </template>
+
+<script>
+    export default {
+        
+        name: 'main-page'
+    }
+</script>
+
+<style lang="scss" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
