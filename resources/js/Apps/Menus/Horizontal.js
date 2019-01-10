@@ -1,6 +1,6 @@
 module.exports = (state) => {
 
-    let menu = ComptechApp.CreateMenu('brand', {caption: 'Horizontal menu'})
+    let menu = ComptechApp.CreateMenu('horizontal-menu', {caption: 'Horizontal menu'})
     let options = [
         {
             name: 'home',
@@ -8,20 +8,25 @@ module.exports = (state) => {
             route: {name: 'welcome'},
         },
         {
-            name: 'option-1',
-            caption: 'Optiunea #1',
+            name: 'system-data',
+            caption: 'Sistem',
             route: null,
             options: [
                 {
-                    name: 'terms',
-                    caption: 'Termeni și condiții',
-                    route: {name: 'terms'},
+                    name: 'breeds',
+                    caption: 'Rase',
+                    route: {name: 'breeds'},
                 },
                 {
-                    name: 'purchase',
-                    caption: 'Prețuri',
-                    route: {name: 'purchase'},
-                }
+                    name: 'colors',
+                    caption: 'Culori',
+                    route: {name: 'colors'},
+                },
+                {
+                    name: 'locations',
+                    caption: 'Țări, regiuni, județe, localități',
+                    route: {name: 'countries'},
+                },
             ]
         },
         

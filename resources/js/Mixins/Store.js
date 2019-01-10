@@ -59,6 +59,10 @@ const methods = {
     },
 
     menuOptionClick(option) {
+        if( option.enabled === false)
+        {
+            return null
+        }
         try
         {
             switch(option.clicktype)

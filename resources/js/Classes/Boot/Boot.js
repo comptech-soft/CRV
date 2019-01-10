@@ -63,6 +63,7 @@ class Boot {
         window[name]['Datetime'] = require('./../Datetime/Datetime')
         window[name]['FormManager'] = require('./../FormManager/FormManager')
         window[name]['CreateMenu'] = require('./../Menus/Create')
+        window[name]['DataFetch'] = require('./../DataFetch/DataFetch')
     }
 
     LoadLodash() {

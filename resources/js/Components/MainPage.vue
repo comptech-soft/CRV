@@ -39,12 +39,10 @@
                 
                 <!-- content -->
                 <div class="m-content">
-                    <div style="background-color: #000; color: yellow; padding: 60px">
-                        <transition name="fade" mode="out-in">
-                            <router-view>
-                            </router-view>
-                        </transition>
-                    </div>
+                    <transition name="fade" mode="out-in">
+                        <router-view>
+                        </router-view>
+                    </transition>
                 </div>
             </div>
         </div>
