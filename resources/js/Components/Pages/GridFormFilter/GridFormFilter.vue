@@ -31,6 +31,13 @@
             :actions="grid.actions"
             @grid-action="onClickAction"
         >
+            <grid
+                :id="'datatable-' + id"
+                :datatable="portlets.grid.datatable"
+                :df="df"
+                :records="records"
+            >
+            </grid>
         </portlet> 
     </div>
 </template>
@@ -60,7 +67,11 @@
                 filter: {
                     visible: false,
                     actions: null,
-                }
+                },
+
+                /** Data Fetch */
+                df: null,
+                records: [],
             }
         },
 
@@ -74,6 +85,11 @@
             this.grid.actions = this.portlets.grid.actions(this)
             this.form.actions = this.portlets.form.actions(this)
             this.filter.actions = this.portlets.filter.actions(this)
+
+            this.df = new ComptechApp.DataFetch(this, this.portlets.grid.datafetch)
+            this.df.current_order = this.portlets.grid.datatable.default_order
+            this.df.populate()
+
             this.ready = true
         },
         

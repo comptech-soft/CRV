@@ -60,7 +60,10 @@ module.exports = (v) => {
         .AddOption('refresh', ComptechApp.CreateMenu('refresh', {
             title: 'Refresh',
             icon: 'la la-refresh',
+            clicktype: 'event',
+            event: 'grid-action',
             visible: true,
+            onClick: v => v.df.populate()
         }))
     return menu
 

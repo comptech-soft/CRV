@@ -16,6 +16,14 @@
                     grid: {
                         title: 'Țări',
                         actions: require('./../../../Menus/Portlets/GridActions'),
+                        datafetch: {
+                            endpoint: 'system/countries/get-records',
+                            searchable: {
+                                fields: ['geo_countries.id', 'geo_countries.name', 'geo_countries.code'],
+                                value: null,
+                            }
+                        },
+                        datatable: require('./datatable'),
                     },
                     form: {
                         title: 'Țări. Formular',

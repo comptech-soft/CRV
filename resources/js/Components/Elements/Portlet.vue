@@ -36,7 +36,8 @@
         </div>
 
         <div class="m-portlet__body">
-            Body...
+            <slot>
+            </slot>
         </div>
     </div>
 </template>

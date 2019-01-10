@@ -16,6 +16,14 @@
                     grid: {
                         title: 'Culori',
                         actions: require('./../../../Menus/Portlets/GridActions'),
+                        datafetch: {
+                            endpoint: 'system/colors/get-records',
+                            searchable: {
+                                fields: ['colors.id', 'colors.color'],
+                                value: null,
+                            }
+                        },
+                        datatable: require('./datatable'),
                     },
                     form: {
                         title: 'Culori. Formular',

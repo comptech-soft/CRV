@@ -23,4 +23,12 @@ Route::middleware(['is-authenticated'])->group(function(){
 
     Route::post('logout', 'App\AuthController@logout')->name('logout');
 
+
+    Route::post('system/breeds/get-records', 'System\BreedsController@getRecords');
+    // Route::post('roles/{action}', 'RolesController@actionDispatch')->name('roles-actions');
+
+    Route::post('system/colors/get-records', 'System\ColorsController@getRecords');
+
+    Route::post('system/countries/get-records', 'System\CountriesController@getRecords');
+
 });
