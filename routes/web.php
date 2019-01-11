@@ -48,4 +48,8 @@ Route::middleware(['is-authenticated'])->group(function(){
     /** Ferme */
     Route::post('system/farms/get-records', 'Farms\FarmsController@getRecords');
     Route::post('system/farms/actions/{action}', 'Farms\FarmsController@actionDispatch');
+
+    /** Tauri */
+    Route::post('system/sires/get-records', 'Sires\SiresController@getRecords');
+    Route::post('system/sires/actions/{action}', 'Sires\SiresController@actionDispatch');
 });

@@ -3,8 +3,7 @@
         class="m-datatable__cell table-header-cell"
         :style="cellStyle"
     >
-        <div>
-            {{column.caption}}
+        <div v-html="column.caption">
         </div>
 
         <div v-if="has_orderable">
@@ -62,7 +61,7 @@
 <style lang="scss" scoped>
     th.table-header-cell {
         
-        padding: 3px 5px !important;
+        padding: 6px 1px !important;
         font-size: 12px !important;
         border:1px solid #bdc3d4;
         border-collapse: collapse;

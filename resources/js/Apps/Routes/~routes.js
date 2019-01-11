@@ -13,7 +13,15 @@ module.exports = [
     require('./Sistem/Judete'),
     require('./Sistem/Localities'),
 
+    /**
+     * Ferme
+     */
     require('./Farms/Farms'),
+
+    /**
+     * Tauri generali
+     */
+    require('./Sires/Sires'),
     
 
     require('./Footer/About'),

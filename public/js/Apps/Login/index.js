@@ -2435,6 +2435,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+
+/**
+ * https://stackoverflow.com/questions/9789723/css-text-overflow-in-a-table-cell/11877033
+ */
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     control: {
@@ -2464,7 +2471,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     renderReccount: function renderReccount(control, record) {
       var r = (this.current_page - 1) * this.per_page + this.row + 1;
-      return '#' + r;
+      return r + '.';
     },
     renderHtml: function renderHtml(control, record) {
       return control.source(record);
@@ -2811,7 +2818,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -4588,6 +4594,25 @@ exports.push([module.i, ".btn-browse[data-v-a48c9e5e] {\n  border-radius: 0;\n}"
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".text-overflow-dynamic-container[data-v-0a13db4b] {\n  position: relative;\n  max-width: 100%;\n  padding: 0 !important;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: flex;\n  vertical-align: text-bottom !important;\n}\n.text-overflow-dynamic-ellipsis[data-v-0a13db4b] {\n  position: absolute;\n  white-space: nowrap;\n  overflow-y: visible;\n  overflow-x: hidden;\n  text-overflow: ellipsis;\n  -ms-text-overflow: ellipsis;\n  -o-text-overflow: ellipsis;\n  max-width: 100%;\n  min-width: 0;\n  width: 100%;\n  top: 0;\n  left: 0;\n}\n.text-overflow-dynamic-container[data-v-0a13db4b]:after,\n.text-overflow-dynamic-ellipsis[data-v-0a13db4b]:after {\n  content: \"-\";\n  display: inline;\n  visibility: hidden;\n  width: 0;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/DataCell.vue?vue&type=style&index=0&id=06ae9b48&lang=scss&scoped=true&":
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Elements/Grid/DataCell.vue?vue&type=style&index=0&id=06ae9b48&lang=scss&scoped=true& ***!
@@ -4600,7 +4625,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "td.table-cell[data-v-06ae9b48] {\n  padding: 3px 5px !important;\n  font-size: 12px !important;\n  border-left: 1px solid #ebedf2;\n  border-right: 1px solid #ebedf2;\n  border-bottom: 1px solid #ebedf2;\n  border-collapse: collapse;\n}", ""]);
+exports.push([module.i, "td.table-cell[data-v-06ae9b48] {\n  padding: 6px 1px !important;\n  font-size: 12px !important;\n  border-left: 1px solid #ebedf2;\n  border-right: 1px solid #ebedf2;\n  border-bottom: 1px solid #ebedf2;\n  border-collapse: collapse;\n  white-space: nowrap;\n}", ""]);
 
 // exports
 
@@ -4638,7 +4663,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  padding: 3px 5px !important;\n  font-size: 12px !important;\n  border: 1px solid #bdc3d4;\n  border-collapse: collapse;\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  padding: 6px 1px !important;\n  font-size: 12px !important;\n  border: 1px solid #bdc3d4;\n  border-collapse: collapse;\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -22385,6 +22410,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/sass-loader/lib/loader.js??ref--6-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/DataCell.vue?vue&type=style&index=0&id=06ae9b48&lang=scss&scoped=true&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Elements/Grid/DataCell.vue?vue&type=style&index=0&id=06ae9b48&lang=scss&scoped=true& ***!
@@ -32742,10 +32797,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b& ***!
-  \*************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -32757,9 +32812,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {
-    domProps: { innerHTML: _vm._s(_vm.renderCell(_vm.control, _vm.record)) }
-  })
+  return _c("span", { staticClass: "text-overflow-dynamic-container" }, [
+    _c("span", {
+      staticClass: "text-overflow-dynamic-ellipsis",
+      domProps: { innerHTML: _vm._s(_vm.renderCell(_vm.control, _vm.record)) }
+    })
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33166,7 +33224,7 @@ var render = function() {
       style: _vm.cellStyle
     },
     [
-      _c("div", [_vm._v("\n        " + _vm._s(_vm.column.caption) + "\n    ")]),
+      _c("div", { domProps: { innerHTML: _vm._s(_vm.column.caption) } }),
       _vm._v(" "),
       _vm.has_orderable
         ? _c("div", [
@@ -51543,15 +51601,36 @@ module.exports = function (state) {
     route: {
       name: 'farms'
     }
+  }, {
+    name: 'sires',
+    caption: 'Tauri',
+    route: null,
+    options: [{
+      name: 'list',
+      caption: 'Lista generală',
+      route: {
+        name: 'sires'
+      },
+      icon: 'flaticon-attachment'
+    }, {
+      name: 'ameliorare',
+      caption: 'Valori ameliorare',
+      route: {
+        name: 'ameliorare'
+      },
+      icon: 'flaticon-attachment'
+    }]
   }];
 
   _.each(options, function (item) {
     var params = {
-      caption: item.caption,
-      clicktype: 'click'
+      caption: item.caption // clicktype: 'click',
+
     };
 
     if (item.hasOwnProperty('route') && item.route) {
+      params['clicktype'] = 'click';
+
       params['onClick'] = function (v) {
         return v.$router.push(item.route);
       };
@@ -54333,9 +54412,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CellText_vue_vue_type_template_id_0a13db4b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CellText.vue?vue&type=template&id=0a13db4b& */ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&");
+/* harmony import */ var _CellText_vue_vue_type_template_id_0a13db4b_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CellText.vue?vue&type=template&id=0a13db4b&scoped=true& */ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&scoped=true&");
 /* harmony import */ var _CellText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CellText.vue?vue&type=script&lang=js& */ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true& */ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -54343,13 +54424,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _CellText_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CellText_vue_vue_type_template_id_0a13db4b___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CellText_vue_vue_type_template_id_0a13db4b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CellText_vue_vue_type_template_id_0a13db4b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CellText_vue_vue_type_template_id_0a13db4b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "0a13db4b",
   null
   
 )
@@ -54375,19 +54456,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&":
-/*!*******************************************************************************************!*\
-  !*** ./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b& ***!
-  \*******************************************************************************************/
+/***/ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_lib_loader_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/sass-loader/lib/loader.js??ref--6-3!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=style&index=0&id=0a13db4b&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_lib_loader_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_lib_loader_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_lib_loader_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_lib_loader_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_sass_loader_lib_loader_js_ref_6_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_style_index_0_id_0a13db4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&scoped=true&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&scoped=true& ***!
+  \*******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_template_id_0a13db4b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CellText.vue?vue&type=template&id=0a13db4b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_template_id_0a13db4b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_template_id_0a13db4b_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CellText.vue?vue&type=template&id=0a13db4b&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Elements/Grid/CellText.vue?vue&type=template&id=0a13db4b&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_template_id_0a13db4b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_template_id_0a13db4b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CellText_vue_vue_type_template_id_0a13db4b_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

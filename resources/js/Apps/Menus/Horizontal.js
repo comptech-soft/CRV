@@ -62,16 +62,36 @@ module.exports = (state) => {
             caption: 'Ferme',
             route: {name: 'farms'},
         },
+        {
+            name: 'sires',
+            caption: 'Tauri',
+            route: null,
+            options: [
+                {
+                    name: 'list',
+                    caption: 'Lista generală',
+                    route: {name: 'sires'},
+                    icon: 'flaticon-attachment'
+                },
+                {
+                    name: 'ameliorare',
+                    caption: 'Valori ameliorare',
+                    route: {name: 'ameliorare'},
+                    icon: 'flaticon-attachment'
+                },
+            ]
+        },
     ];
 
     _.each(options, item => {
 
         let params = {
             caption: item.caption,
-            clicktype: 'click',
+            // clicktype: 'click',
         }
         if(item.hasOwnProperty('route') && item.route)
         {
+            params['clicktype'] = 'click'
             params['onClick'] = v => v.$router.push(item.route)
         }
         let submenu = ComptechApp.CreateMenu(item.name, params)
