@@ -35,6 +35,12 @@
                     form: {
                         title: 'Firme. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
+                        layout: require('./../../../Menus/FormActions/FormActions')({
+                            insert: 'system/companies/actions/insert',
+                            update: 'system/companies/actions/update',
+                            delete: 'system/companies/actions/delete',
+                        }),
+                        component: 'company-controls',
                     },
                     filter: {
                         title: 'Firme. Filtrare',
@@ -44,6 +50,6 @@
             }
         },
     
-        name: 'content-breeds',
+        name: 'content-companies',
     }
 </script>

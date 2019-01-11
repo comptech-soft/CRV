@@ -35,6 +35,12 @@
                     form: {
                         title: 'Țări. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
+                        layout: require('./../../../Menus/FormActions/FormActions')({
+                            insert: 'system/countries/actions/insert',
+                            update: 'system/countries/actions/update',
+                            delete: 'system/countries/actions/delete',
+                        }),
+                        component: 'country-controls',
                     },
                     filter: {
                         title: 'Țări. Filtrare',

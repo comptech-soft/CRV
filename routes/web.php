@@ -5,7 +5,7 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::post('get-app-configs', 'App\ConfigController@getConfig');
-
+Route::post('upload-image', 'App\UploadController@uploadImage');
 /*
 | neautentificati
 */
@@ -30,8 +30,11 @@ Route::middleware(['is-authenticated'])->group(function(){
     Route::post('system/colors/get-records', 'System\ColorsController@getRecords');
     Route::post('system/colors/actions/{action}', 'System\ColorsController@actionDispatch');
 
-    Route::post('system/countries/get-records', 'System\CountriesController@getRecords');
-
     Route::post('system/companies/get-records', 'System\CompaniesController@getRecords');
+    Route::post('system/companies/actions/{action}', 'System\CompaniesController@actionDispatch');
+
+    Route::post('system/countries/get-records', 'System\CountriesController@getRecords');
+    Route::post('system/countries/actions/{action}', 'System\CountriesController@actionDispatch');
+    
 
 });

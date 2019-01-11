@@ -14,4 +14,8 @@ class CountriesController extends Controller
         return Country::getRecords($request->all());
     }
 
+    public function actionDispatch($action, Request $request) {
+        return Country::actionDispatch($action, $request->all());
+    }
+
 }

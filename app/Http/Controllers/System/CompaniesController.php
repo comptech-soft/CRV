@@ -14,4 +14,8 @@ class CompaniesController extends Controller
         return Company::getRecords($request->all());
     }
 
+    public function actionDispatch($action, Request $request) {
+        return Company::actionDispatch($action, $request->all());
+    }
+
 }
