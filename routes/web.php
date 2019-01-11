@@ -24,6 +24,7 @@ Route::middleware(['is-authenticated'])->group(function(){
     Route::post('logout', 'App\AuthController@logout')->name('logout');
 
 
+    /** Sistem */
     Route::post('system/breeds/get-records', 'System\BreedsController@getRecords');
     Route::post('system/breeds/actions/{action}', 'System\BreedsController@actionDispatch');
 
@@ -35,6 +36,11 @@ Route::middleware(['is-authenticated'])->group(function(){
 
     Route::post('system/countries/get-records', 'System\CountriesController@getRecords');
     Route::post('system/countries/actions/{action}', 'System\CountriesController@actionDispatch');
-    
 
+    Route::post('system/regions/get-records', 'System\RegionsController@getRecords');
+    Route::post('system/regions/actions/{action}', 'System\RegionsController@actionDispatch');
+    
+    /** Ferme */
+    Route::post('system/farms/get-records', 'Farms\FarmsController@getRecords');
+    Route::post('system/farms/actions/{action}', 'Farms\FarmsController@actionDispatch');
 });

@@ -16,25 +16,52 @@ module.exports = (state) => {
                     name: 'breeds',
                     caption: 'Rase',
                     route: {name: 'breeds'},
+                    icon: 'flaticon-attachment'
                 },
                 {
                     name: 'colors',
                     caption: 'Culori',
                     route: {name: 'colors'},
-                },
-                {
-                    name: 'locations',
-                    caption: 'Țări, regiuni, județe, localități',
-                    route: {name: 'countries'},
+                    icon: 'flaticon-attachment'
                 },
                 {
                     name: 'companies',
                     caption: 'Firme',
                     route: {name: 'companies'},
+                    icon: 'flaticon-attachment'
                 },
+                {
+                    name: 'countries',
+                    caption: 'Țări', 
+                    route: {name: 'countries'},
+                    icon: 'flaticon-attachment'
+                },
+                {
+                    name: 'regions',
+                    caption: 'Regiuni', 
+                    route: {name: 'regions'},
+                    icon: 'flaticon-attachment'
+                },
+                {
+                    name: 'judete',
+                    caption: 'Județe', 
+                    route: {name: 'judete'},
+                    icon: 'flaticon-attachment'
+                },
+                {
+                    name: 'localities',
+                    caption: 'Localități', 
+                    route: {name: 'localities'},
+                    icon: 'flaticon-attachment'
+                },
+                
             ]
         },
-        
+        {
+            name: 'farms',
+            caption: 'Ferme',
+            route: {name: 'farms'},
+        },
     ];
 
     _.each(options, item => {
@@ -54,6 +81,7 @@ module.exports = (state) => {
                 submenu.AddOption(subitem.name, ComptechApp.CreateMenu(subitem.name, {
                     caption: subitem.caption,
                     clicktype: 'click',
+                    icon: subitem.icon,
                     onClick: v => v.$router.push(subitem.route)
                 }))
             })

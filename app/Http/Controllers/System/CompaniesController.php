@@ -10,7 +10,6 @@ class CompaniesController extends Controller
 {
 
     public function getRecords(Request $request) {
-
         return Company::getRecords($request->all());
     }
 

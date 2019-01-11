@@ -48,7 +48,7 @@
 								:key="'horizontal-menu-subitem-' + subitem.name"
 							>
 								<a href="#" class="m-menu__link" @click="menuOptionClick(subitem)">
-									<i class="m-menu__link-icon flaticon-diagram"></i>
+									<i :class="'m-menu__link-icon ' + subitem.icon"></i>
 									<span class="m-menu__link-title">
 										<span class="m-menu__link-wrap">
 											<span class="m-menu__link-text">

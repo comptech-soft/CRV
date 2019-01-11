@@ -21,11 +21,13 @@
                 {
                     return control.source(record)
                 }
-                /**
-                 * To Do: sa mearga pentru campuri succesive din relatii
-                 */
-
-                return record[control.source]
+                let parts = control.source.split('.')
+                let r = record[parts[0]]
+                for(let i = 1; i < parts.length; i++)
+                {
+                    r = r[parts[i]]
+                }
+                return r
             },
 
             renderReccount(control, record) {

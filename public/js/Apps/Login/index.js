@@ -2088,7 +2088,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2103,13 +2102,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     onLogoValidationFail: function onLogoValidationFail(e) {
-      console.log('FAIL', e);
       this.record.logo = null;
       this.record.width = null;
       this.record.height = null;
     },
     onLogoUploadSuccess: function onLogoUploadSuccess(e) {
-      console.log('SUCCESS', e);
       this.record.logo = e.file_url;
       this.record.width = e.width;
       this.record.height = e.height;
@@ -2165,6 +2162,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2175,6 +2197,16 @@ __webpack_require__.r(__webpack_exports__);
         icon: null
       }
     };
+  },
+  methods: {
+    onLogoValidationFail: function onLogoValidationFail(e) {
+      this.record.icon = null; // this.record.width = null
+      // this.record.height = null
+    },
+    onLogoUploadSuccess: function onLogoUploadSuccess(e) {
+      this.record.icon = e.file_url; // this.record.width = e.width
+      // this.record.height = e.height
+    }
   },
   mixins: [__webpack_require__(/*! ./../~Mixins/Controls */ "./resources/js/Components/Crv/Forms/~Mixins/Controls.js")]
 });
@@ -2420,12 +2452,15 @@ __webpack_require__.r(__webpack_exports__);
       if (_.isFunction(control.source)) {
         return control.source(record);
       }
-      /**
-       * To Do: sa mearga pentru campuri succesive din relatii
-       */
 
+      var parts = control.source.split('.');
+      var r = record[parts[0]];
 
-      return record[control.source];
+      for (var i = 1; i < parts.length; i++) {
+        r = r[parts[i]];
+      }
+
+      return r;
     },
     renderReccount: function renderReccount(control, record) {
       var r = (this.current_page - 1) * this.per_page + this.row + 1;
@@ -4586,7 +4621,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  /*\n  padding: 0.35rem !important;\n  font-size: 12px;\n  */\n  border: 1px solid #bdc3d4;\n  border-collapse: collapse;\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  padding: 3px 5px !important;\n  font-size: 12px !important;\n  border: 1px solid #bdc3d4;\n  border-collapse: collapse;\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -32295,7 +32330,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.ready
     ? _c("div", [
-        _vm._v("\n\n        " + _vm._s(_vm.record) + "\n        "),
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
@@ -32435,6 +32469,40 @@ var render = function() {
                     _vm.$set(_vm.record, "name", $$v)
                   },
                   expression: "record.name"
+                }
+              })
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c("image-uploader", {
+                attrs: {
+                  label: "Iconiță pentru drapel",
+                  id: "countries-icon",
+                  field: "icon",
+                  after_upload: { action: "resize", width: 64, height: 64 },
+                  maxsize: "5",
+                  maxheight: "128",
+                  url_field: "file_url",
+                  folder: "countries",
+                  endpoint: "upload-image",
+                  extensions: ["png", "jpg", "jpeg"],
+                  errors: _vm.errors,
+                  initial_image:
+                    _vm.action != "insert"
+                      ? { file_url: _vm.record.icon, width: 128, height: 128 }
+                      : null,
+                  disabled: _vm.action == "delete"
+                },
+                on: {
+                  "upload-validation-fail": _vm.onLogoValidationFail,
+                  "uploading-process-end-success": _vm.onLogoUploadSuccess
                 }
               })
             ],
@@ -34694,8 +34762,8 @@ var render = function() {
                                     },
                                     [
                                       _c("i", {
-                                        staticClass:
-                                          "m-menu__link-icon flaticon-diagram"
+                                        class:
+                                          "m-menu__link-icon " + subitem.icon
                                       }),
                                       _vm._v(" "),
                                       _c(
@@ -51386,26 +51454,57 @@ module.exports = function (state) {
       caption: 'Rase',
       route: {
         name: 'breeds'
-      }
+      },
+      icon: 'flaticon-attachment'
     }, {
       name: 'colors',
       caption: 'Culori',
       route: {
         name: 'colors'
-      }
-    }, {
-      name: 'locations',
-      caption: 'Țări, regiuni, județe, localități',
-      route: {
-        name: 'countries'
-      }
+      },
+      icon: 'flaticon-attachment'
     }, {
       name: 'companies',
       caption: 'Firme',
       route: {
         name: 'companies'
-      }
+      },
+      icon: 'flaticon-attachment'
+    }, {
+      name: 'countries',
+      caption: 'Țări',
+      route: {
+        name: 'countries'
+      },
+      icon: 'flaticon-attachment'
+    }, {
+      name: 'regions',
+      caption: 'Regiuni',
+      route: {
+        name: 'regions'
+      },
+      icon: 'flaticon-attachment'
+    }, {
+      name: 'judete',
+      caption: 'Județe',
+      route: {
+        name: 'judete'
+      },
+      icon: 'flaticon-attachment'
+    }, {
+      name: 'localities',
+      caption: 'Localități',
+      route: {
+        name: 'localities'
+      },
+      icon: 'flaticon-attachment'
     }]
+  }, {
+    name: 'farms',
+    caption: 'Ferme',
+    route: {
+      name: 'farms'
+    }
   }];
 
   _.each(options, function (item) {
@@ -51427,6 +51526,7 @@ module.exports = function (state) {
         submenu.AddOption(subitem.name, ComptechApp.CreateMenu(subitem.name, {
           caption: subitem.caption,
           clicktype: 'click',
+          icon: subitem.icon,
           onClick: function onClick(v) {
             return v.$router.push(subitem.route);
           }

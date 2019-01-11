@@ -10,7 +10,6 @@ class ColorsController extends Controller
 {
 
     public function getRecords(Request $request) {
-
         return Color::getRecords($request->all());
     }
 

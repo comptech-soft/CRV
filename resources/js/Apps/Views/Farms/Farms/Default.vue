@@ -1,6 +1,6 @@
 <template>
     <grid-form-filter
-        id="breeds"
+        id="farms"
         :portlets="portlets"
     >
     </grid-form-filter>
@@ -14,7 +14,7 @@
             portlets() {
                 return {
                     grid: {
-                        title: 'Rase',
+                        title: 'Ferme',
                         actions: require('./../../../Menus/Portlets/GridActions')({
                             insert: true,
                             filter: false,
@@ -24,32 +24,32 @@
                             refresh: true
                         }),
                         datafetch: {
-                            endpoint: 'system/breeds/get-records',
+                            endpoint: 'system/farms/get-records',
                             searchable: {
-                                fields: ['breeds.breed', 'breeds.code'],
+                                fields: ['farms.farm'],
                                 value: null,
                             }
                         },
                         datatable: require('./datatable'),
                     },
                     form: {
-                        title: 'Rase. Formular',
+                        title: 'Ferme. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
                         layout: require('./../../../Menus/FormActions/FormActions')({
                             insert: 'system/breeds/actions/insert',
                             update: 'system/breeds/actions/update',
                             delete: 'system/breeds/actions/delete',
                         }),
-                        component: 'breed-controls',
+                        component: 'farm-controls',
                     },
                     filter: {
-                        title: 'Rase. Filtrare',
+                        title: 'Ferme. Filtrare',
                         actions: require('./../../../Menus/Portlets/FilterActions'),
                     }
                 }
             }
         },
     
-        name: 'content-breeds',
+        name: 'content-farms',
     }
 </script>

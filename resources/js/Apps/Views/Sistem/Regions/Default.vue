@@ -1,6 +1,6 @@
 <template>
     <grid-form-filter
-        id="breeds"
+        id="regions"
         :portlets="portlets"
     >
     </grid-form-filter>
@@ -14,42 +14,42 @@
             portlets() {
                 return {
                     grid: {
-                        title: 'Rase',
+                        title: 'Regiuni',
                         actions: require('./../../../Menus/Portlets/GridActions')({
-                            insert: true,
-                            filter: false,
+                            insert: false,
+                            filter: true,
                             'delete-all': false,
                             download: false,
                             upload: false,
                             refresh: true
                         }),
                         datafetch: {
-                            endpoint: 'system/breeds/get-records',
+                            endpoint: 'system/regions/get-records',
                             searchable: {
-                                fields: ['breeds.breed', 'breeds.code'],
+                                fields: ['geo_regions.name'],
                                 value: null,
                             }
                         },
                         datatable: require('./datatable'),
                     },
                     form: {
-                        title: 'Rase. Formular',
+                        title: 'Regiuni. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
                         layout: require('./../../../Menus/FormActions/FormActions')({
-                            insert: 'system/breeds/actions/insert',
-                            update: 'system/breeds/actions/update',
-                            delete: 'system/breeds/actions/delete',
+                            insert: 'system/regions/actions/insert',
+                            update: 'system/regions/actions/update',
+                            delete: 'system/regions/actions/delete',
                         }),
-                        component: 'breed-controls',
+                        component: 'region-controls',
                     },
                     filter: {
-                        title: 'Rase. Filtrare',
+                        title: 'Regiuni. Filtrare',
                         actions: require('./../../../Menus/Portlets/FilterActions'),
                     }
                 }
             }
         },
     
-        name: 'content-breeds',
+        name: 'content-regions',
     }
 </script>

@@ -4,6 +4,6 @@
 
 <script>
     export default {
-        name: 'subheader-breeds'
+        name: 'subheader-regions'
     }
 </script>

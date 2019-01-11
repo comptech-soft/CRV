@@ -1,7 +1,6 @@
 <template>
     <div v-if="ready">
 
-        {{ record }}
         <div class="row">
 
             <div class="col-12">

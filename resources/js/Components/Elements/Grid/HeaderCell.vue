@@ -61,10 +61,12 @@
 
 <style lang="scss" scoped>
     th.table-header-cell {
-        /*
-        padding: 0.35rem !important;
-        font-size: 12px;
-        */
+        
+        padding: 3px 5px !important;
+        font-size: 12px !important;
+        border:1px solid #bdc3d4;
+        border-collapse: collapse;
+
         span.current {
             color: #535be2 !important;
             font-weight: bold;
@@ -73,7 +75,5 @@
         span {
             cursor:pointer;
         }
-        border:1px solid #bdc3d4;
-        border-collapse: collapse;
     }
 </style>
