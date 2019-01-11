@@ -10,7 +10,8 @@ module.exports = [
     require('./Sistem/Companies'),
     require('./Sistem/Countries'),
     require('./Sistem/Regions'),
-
+    require('./Sistem/Judete'),
+    require('./Sistem/Localities'),
 
     require('./Farms/Farms'),
     

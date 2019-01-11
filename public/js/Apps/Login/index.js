@@ -2681,6 +2681,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     id: {
@@ -2706,6 +2709,17 @@ __webpack_require__.r(__webpack_exports__);
       timeout: null
     };
   },
+  computed: {
+    total_columns_width: function total_columns_width() {
+      var r = 0;
+
+      _.each(this.datatable.columns, function (column, key) {
+        r += column.width;
+      });
+
+      return r;
+    }
+  },
   methods: {
     onOrderBy: function onOrderBy(order) {
       this.df.onOrderBy(order);
@@ -2730,6 +2744,9 @@ __webpack_require__.r(__webpack_exports__);
     onRecordActionClick: function onRecordActionClick(event) {
       this.$emit('record-action-click', event);
     }
+  },
+  mounted: function mounted() {
+    console.log('Grid is mounted');
   }
 });
 
@@ -32831,6 +32848,27 @@ var render = function() {
                   }
                 },
                 [
+                  _vm.total_columns_width != 100
+                    ? _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            "background-color": "red",
+                            color: "#fff"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.total_columns_width) +
+                              " | " +
+                              _vm._s(100 - _vm.total_columns_width) +
+                              "\n                        "
+                          )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
                   _c("input", {
                     directives: [
                       {

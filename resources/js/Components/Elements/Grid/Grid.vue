@@ -5,6 +5,9 @@
             <div class="form-group m-form__group row align-items-center" style="margin-bottom:0px; padding-bottom:0px;">
                 <div class="col-md-4">
                     <div class="m-input-icon m-input-icon--left" style="margin-top:0px; margin-bottom:0px; max-width: 160px">
+                        <div v-if="total_columns_width != 100" style="background-color: red; color: #fff">
+                            {{ total_columns_width }} | {{ 100 - total_columns_width }}
+                        </div>
                         <input 
                             type="text" 
                             class="form-control m-input" 
@@ -131,6 +134,17 @@
             }
         },
 
+        computed: {
+
+            total_columns_width() {
+                let r = 0;
+                _.each(this.datatable.columns, (column, key) => {
+                    r += column.width
+                })
+                return r
+            }
+        },
+
         methods: {
             onOrderBy(order) {
                 this.df.onOrderBy(order)
@@ -158,5 +172,9 @@
                 this.$emit('record-action-click', event)
             }
         },
+
+        mounted() {
+            console.log('Grid is mounted')
+        }
     }
 </script>
