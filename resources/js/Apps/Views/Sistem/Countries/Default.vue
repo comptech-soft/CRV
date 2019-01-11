@@ -15,11 +15,18 @@
                 return {
                     grid: {
                         title: 'Țări',
-                        actions: require('./../../../Menus/Portlets/GridActions'),
+                        actions: require('./../../../Menus/Portlets/GridActions')({
+                            insert: true,
+                            filter: false,
+                            'delete-all': false,
+                            download: false,
+                            upload: false,
+                            refresh: true
+                        }),
                         datafetch: {
                             endpoint: 'system/countries/get-records',
                             searchable: {
-                                fields: ['geo_countries.id', 'geo_countries.name', 'geo_countries.code'],
+                                fields: ['geo_countries.name', 'geo_countries.code'],
                                 value: null,
                             }
                         },

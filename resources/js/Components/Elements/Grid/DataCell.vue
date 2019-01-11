@@ -56,7 +56,11 @@
 
 <style lang="scss" scoped>
     td.table-cell {
-        padding: 4px !important;
+        padding: 3px 5px !important;
         font-size: 12px !important;
+        border-left:1px solid #ebedf2;
+        border-right:1px solid #ebedf2;
+        border-bottom:1px solid #ebedf2;
+        border-collapse: collapse;
     }
 </style>

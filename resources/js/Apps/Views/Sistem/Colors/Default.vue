@@ -15,11 +15,18 @@
                 return {
                     grid: {
                         title: 'Culori',
-                        actions: require('./../../../Menus/Portlets/GridActions'),
+                        actions: require('./../../../Menus/Portlets/GridActions')({
+                            insert: true,
+                            filter: false,
+                            'delete-all': false,
+                            download: false,
+                            upload: false,
+                            refresh: true
+                        }),
                         datafetch: {
                             endpoint: 'system/colors/get-records',
                             searchable: {
-                                fields: ['colors.id', 'colors.color'],
+                                fields: ['colors.color'],
                                 value: null,
                             }
                         },

@@ -1,8 +1,8 @@
 module.exports = ComptechApp.CreateDatatable('datatable-companies', {
 
     default_order: {
-        key: 'id',
-        fields: ['companies.id'],
+        key: 'name',
+        fields: ['companies.name'],
         direction: 'asc'
     },
     columns: require('./columns')

@@ -1,8 +1,8 @@
 module.exports = ComptechApp.CreateDatatable('datatable-countries', {
 
     default_order: {
-        key: 'id',
-        fields: ['geo_countries.id'],
+        key: 'name',
+        fields: ['geo_countries.name'],
         direction: 'asc'
     },
     columns: require('./columns')

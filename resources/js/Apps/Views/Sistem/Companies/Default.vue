@@ -15,7 +15,14 @@
                 return {
                     grid: {
                         title: 'Firme',
-                        actions: require('./../../../Menus/Portlets/GridActions'),
+                        actions: require('./../../../Menus/Portlets/GridActions')({
+                            insert: true,
+                            filter: false,
+                            'delete-all': false,
+                            download: false,
+                            upload: false,
+                            refresh: true
+                        }),
                         datafetch: {
                             endpoint: 'system/companies/get-records',
                             searchable: {

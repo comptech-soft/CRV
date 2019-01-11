@@ -138,7 +138,7 @@
         computed: {
             form_layout() {
                 return {
-                    caption: this.form.layout[this.form.action].header.caption,
+                    caption: this.portlets.grid.title + '. ' + this.form.layout[this.form.action].header.caption,
                     btn_caption: this.form.layout[this.form.action].button.caption,
                     btn_icon: this.form.layout[this.form.action].button.icon,
                     btn_color: this.form.layout[this.form.action].button.color,

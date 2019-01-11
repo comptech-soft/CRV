@@ -1948,19 +1948,26 @@ __webpack_require__.r(__webpack_exports__);
     portlets: function portlets() {
       return {
         grid: {
-          title: 'Rase de vaci',
-          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js"),
+          title: 'Rase',
+          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js")({
+            insert: true,
+            filter: false,
+            'delete-all': false,
+            download: false,
+            upload: false,
+            refresh: true
+          }),
           datafetch: {
             endpoint: 'system/breeds/get-records',
             searchable: {
-              fields: ['breeds.id', 'breeds.breed', 'breeds.code'],
+              fields: ['breeds.breed', 'breeds.code'],
               value: null
             }
           },
           datatable: __webpack_require__(/*! ./datatable */ "./resources/js/Apps/Views/Sistem/Breeds/datatable.js")
         },
         form: {
-          title: 'Rase de vaci. Formular',
+          title: 'Rase. Formular',
           actions: __webpack_require__(/*! ./../../../Menus/Portlets/FormActions */ "./resources/js/Apps/Menus/Portlets/FormActions.js"),
           layout: __webpack_require__(/*! ./../../../Menus/FormActions/FormActions */ "./resources/js/Apps/Menus/FormActions/FormActions.js")({
             insert: 'system/breeds/actions/insert',
@@ -1970,7 +1977,7 @@ __webpack_require__.r(__webpack_exports__);
           component: 'breed-controls'
         },
         filter: {
-          title: 'Rase de animale. Filtrare',
+          title: 'Rase. Filtrare',
           actions: __webpack_require__(/*! ./../../../Menus/Portlets/FilterActions */ "./resources/js/Apps/Menus/Portlets/FilterActions.js")
         }
       };
@@ -1990,7 +1997,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2024,11 +2030,18 @@ __webpack_require__.r(__webpack_exports__);
       return {
         grid: {
           title: 'Culori',
-          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js"),
+          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js")({
+            insert: true,
+            filter: false,
+            'delete-all': false,
+            download: false,
+            upload: false,
+            refresh: true
+          }),
           datafetch: {
             endpoint: 'system/colors/get-records',
             searchable: {
-              fields: ['colors.id', 'colors.color'],
+              fields: ['colors.color'],
               value: null
             }
           },
@@ -2063,7 +2076,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'subheader-colors'
 });
@@ -2093,7 +2105,14 @@ __webpack_require__.r(__webpack_exports__);
       return {
         grid: {
           title: 'Firme',
-          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js"),
+          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js")({
+            insert: true,
+            filter: false,
+            'delete-all': false,
+            download: false,
+            upload: false,
+            refresh: true
+          }),
           datafetch: {
             endpoint: 'system/companies/get-records',
             searchable: {
@@ -2132,7 +2151,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'subheader-companies'
 });
@@ -2162,11 +2180,18 @@ __webpack_require__.r(__webpack_exports__);
       return {
         grid: {
           title: 'Țări',
-          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js"),
+          actions: __webpack_require__(/*! ./../../../Menus/Portlets/GridActions */ "./resources/js/Apps/Menus/Portlets/GridActions.js")({
+            insert: true,
+            filter: false,
+            'delete-all': false,
+            download: false,
+            upload: false,
+            refresh: true
+          }),
           datafetch: {
             endpoint: 'system/countries/get-records',
             searchable: {
-              fields: ['geo_countries.id', 'geo_countries.name', 'geo_countries.code'],
+              fields: ['geo_countries.name', 'geo_countries.code'],
               value: null
             }
           },
@@ -2197,7 +2222,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -4286,7 +4310,7 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     form_layout: function form_layout() {
       return {
-        caption: this.form.layout[this.form.action].header.caption,
+        caption: this.portlets.grid.title + '. ' + this.form.layout[this.form.action].header.caption,
         btn_caption: this.form.layout[this.form.action].button.caption,
         btn_icon: this.form.layout[this.form.action].button.icon,
         btn_color: this.form.layout[this.form.action].button.color
@@ -4607,7 +4631,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "td.table-cell[data-v-06ae9b48] {\n  padding: 4px !important;\n  font-size: 12px !important;\n}", ""]);
+exports.push([module.i, "td.table-cell[data-v-06ae9b48] {\n  padding: 3px 5px !important;\n  font-size: 12px !important;\n  border-left: 1px solid #ebedf2;\n  border-right: 1px solid #ebedf2;\n  border-bottom: 1px solid #ebedf2;\n  border-collapse: collapse;\n}", ""]);
 
 // exports
 
@@ -4645,7 +4669,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  /*\n  padding: 0.35rem !important;\n  font-size: 12px;\n  */\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  /*\n  padding: 0.35rem !important;\n  font-size: 12px;\n  */\n  border: 1px solid #bdc3d4;\n  border-collapse: collapse;\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -51248,6 +51272,40 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Apps/Columns/Columns.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Apps/Columns/Columns.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = {
+  RecCount: function RecCount(width) {
+    return ComptechApp.CreateColumn('reccout', {
+      width: width,
+      caption: '#',
+      type: 'reccount',
+      html_style: {
+        'text-align': 'right'
+      }
+    });
+  },
+  Actions: function Actions(width) {
+    return ComptechApp.CreateColumn('actions', {
+      width: width,
+      caption: 'Acțiuni',
+      component: 'actions',
+      type: null,
+      html_style: {
+        'text-align': 'center'
+      },
+      actions: __webpack_require__(/*! ./../Menus/Portlets/RecordActions */ "./resources/js/Apps/Menus/Portlets/RecordActions.js")
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/Apps/Crv/index.js":
 /*!****************************************!*\
   !*** ./resources/js/Apps/Crv/index.js ***!
@@ -51266,6 +51324,60 @@ var boot = new _Classes_Boot_Boot__WEBPACK_IMPORTED_MODULE_0__["default"]('Compt
   routes: __webpack_require__(/*! ./../Routes/~routes */ "./resources/js/Apps/Routes/~routes.js")
 });
 ComptechApp.vue = boot.Mount('#crv-app');
+
+/***/ }),
+
+/***/ "./resources/js/Apps/Events/Events.js":
+/*!********************************************!*\
+  !*** ./resources/js/Apps/Events/Events.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  ToolBar: {
+    onClickInsertBtn: function onClickInsertBtn(v) {
+      /** Ascund gridul si filtrarea */
+      v.grid.visible = false;
+      v.filter.visible = false;
+      /** Formularul devine vizibil */
+
+      v.form.visible = true;
+      v.form.action = 'insert';
+      v.form.record = null;
+      /** Resetez form manager (fm) */
+
+      v.fm.resetResults();
+    },
+    onClickFilterBtn: function onClickFilterBtn(v) {
+      // v.form.visible = false
+      v.filter.visible = true; // v.grid.visible = true
+
+      /** Deactivez toate butoanele din toolbar */
+      // _.each(v.grid.actions.options, action => {
+      //     action.enabled = false
+      // })
+    }
+  },
+  Record: {
+    onClickUpdate: function onClickUpdate(v, record) {
+      v.grid.visible = false;
+      v.filter.visible = false;
+      v.form.visible = true;
+      v.form.action = 'update';
+      v.form.record = record;
+      v.fm.resetResults();
+    },
+    onClickDelete: function onClickDelete(v, record) {
+      v.grid.visible = false;
+      v.filter.visible = false;
+      v.form.visible = true;
+      v.form.action = 'delete';
+      v.form.record = record;
+      v.fm.resetResults();
+    }
+  }
+};
 
 /***/ }),
 
@@ -51590,76 +51702,101 @@ module.exports = function (v) {
   !*** ./resources/js/Apps/Menus/Portlets/GridActions.js ***!
   \*********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * La afisarea formularului insert 
- */
-var onInsert = function onInsert(v) {
-  /** Ascund gridul si filtrarea */
-  v.grid.visible = false;
-  v.filter.visible = false;
-  /** Formularul devine vizibil */
+var Events = __webpack_require__(/*! ./../../Events/Events */ "./resources/js/Apps/Events/Events.js");
 
-  v.form.visible = true;
-  v.form.action = 'insert';
-  v.form.record = null;
-  /** Resetez form manager (fm) */
+module.exports = function (buttons) {
+  var actions = {
+    insert: ComptechApp.CreateMenu('insert', {
+      title: 'Adaugă',
+      icon: 'la la-plus',
+      clicktype: 'event',
+      event: 'grid-action',
+      visible: true,
+      onClick: Events.ToolBar.onClickInsertBtn
+    }),
+    filter: ComptechApp.CreateMenu('filter', {
+      title: 'Filtrează',
+      icon: 'la la-filter',
+      clicktype: 'event',
+      event: 'grid-action',
+      visible: true,
+      onClick: Events.ToolBar.onClickFilterBtn
+    }),
+    'delete-all': ComptechApp.CreateMenu('delete-all', {
+      title: 'Șterge toate înregistrările',
+      icon: 'la la-trash',
+      visible: true
+    }),
+    download: ComptechApp.CreateMenu('download', {
+      title: 'Exportă',
+      icon: 'la la-download',
+      visible: true
+    }),
+    upload: ComptechApp.CreateMenu('upload', {
+      title: 'Importă',
+      icon: 'la la-upload',
+      visible: true
+    }),
+    refresh: ComptechApp.CreateMenu('refresh', {
+      title: 'Refresh',
+      icon: 'la la-refresh',
+      clicktype: 'event',
+      event: 'grid-action',
+      visible: true,
+      onClick: function onClick(v) {
+        return v.df.populate();
+      }
+    })
+  };
+  return function (v) {
+    var menu = ComptechApp.CreateMenu('grid-actions');
 
-  v.fm.resetResults();
+    _.each(buttons, function (exists, key) {
+      if (exists) {
+        menu.AddOption(key, actions[key]);
+      }
+    });
+
+    return menu;
+  };
 };
 
-var onFilter = function onFilter(v) {
-  // v.form.visible = false
-  v.filter.visible = true; // v.grid.visible = true
+/***/ }),
 
-  /** Deactivez toate butoanele din toolbar */
+/***/ "./resources/js/Apps/Menus/Portlets/RecordActions.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/Apps/Menus/Portlets/RecordActions.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-  _.each(v.grid.actions.options, function (action) {
-    action.enabled = false;
-  });
-};
+var Events = __webpack_require__(/*! ./../../Events/Events */ "./resources/js/Apps/Events/Events.js");
 
-module.exports = function (v) {
-  var menu = ComptechApp.CreateMenu('grid-actions');
-  menu.AddOption('insert', ComptechApp.CreateMenu('insert', {
-    title: 'Adaugă',
-    icon: 'la la-plus',
-    clicktype: 'event',
-    event: 'grid-action',
-    visible: true,
-    onClick: onInsert
-  })).AddOption('filter', ComptechApp.CreateMenu('filter', {
-    title: 'Filtrează',
-    icon: 'la la-filter',
-    clicktype: 'event',
-    event: 'grid-action',
-    visible: true,
-    onClick: onFilter
-  })).AddOption('delete-all', ComptechApp.CreateMenu('delete-all', {
-    title: 'Șterge toate înregistrările',
-    icon: 'la la-trash',
-    visible: true
-  })).AddOption('download', ComptechApp.CreateMenu('download', {
-    title: 'Exportă',
-    icon: 'la la-download',
-    visible: true
-  })).AddOption('upload', ComptechApp.CreateMenu('upload', {
-    title: 'Importă',
-    icon: 'la la-upload',
-    visible: true
-  })).AddOption('refresh', ComptechApp.CreateMenu('refresh', {
-    title: 'Refresh',
-    icon: 'la la-refresh',
-    clicktype: 'event',
-    event: 'grid-action',
-    visible: true,
-    onClick: function onClick(v) {
-      return v.df.populate();
-    }
-  }));
-  return menu;
-};
+module.exports = ComptechApp.CreateMenu('actions').AddOption('update', ComptechApp.CreateMenu('update', {
+  caption: function caption(record) {
+    return 'Editează';
+  },
+  icon: 'la la-pencil',
+  html_class: {
+    'm--font-primary': true
+  },
+  clicktype: 'event',
+  event: 'record-action-click',
+  onClick: Events.Record.onClickUpdate
+})).AddOption('delete', ComptechApp.CreateMenu('delete', {
+  caption: function caption(record) {
+    return 'Șterge';
+  },
+  icon: 'la la-trash',
+  html_class: {
+    'm--font-danger': true
+  },
+  clicktype: 'event',
+  event: 'record-action-click',
+  onClick: Events.Record.onClickDelete
+}));
 
 /***/ }),
 
@@ -52794,29 +52931,14 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./resources/js/Apps/Views/Sistem/Breeds/columns.js ***!
   \**********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var Columns = __webpack_require__(/*! ./../../../Columns/Columns */ "./resources/js/Apps/Columns/Columns.js");
 
 module.exports = {
-  reccount: ComptechApp.CreateColumn('reccout', {
-    width: 10,
-    caption: '#',
-    type: 'reccount',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
-  id: ComptechApp.CreateColumn('id', {
-    width: 10,
-    caption: 'ID',
-    orderby: ['breeds.id'],
-    direction: 'asc',
-    source: 'id',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
+  reccount: Columns.RecCount(10),
   breed: ComptechApp.CreateColumn('breed', {
-    width: 40,
+    width: 50,
     caption: 'Denumire',
     orderby: ['breeds.breed'],
     direction: 'asc',
@@ -52829,50 +52951,7 @@ module.exports = {
     direction: 'asc',
     source: 'code'
   }),
-  actions: ComptechApp.CreateColumn('actions', {
-    width: 10,
-    caption: 'Acțiuni',
-    component: 'actions',
-    type: null,
-    source: 'code',
-    actions: ComptechApp.CreateMenu('actions').AddOption('update', ComptechApp.CreateMenu('update', {
-      caption: function caption(record) {
-        return 'Editează';
-      },
-      icon: 'la la-pencil',
-      html_class: {
-        'm--font-primary': true
-      },
-      clicktype: 'event',
-      event: 'record-action-click',
-      onClick: function onClick(v, record) {
-        v.grid.visible = false;
-        v.filter.visible = false;
-        v.form.visible = true;
-        v.form.action = 'update';
-        v.form.record = record;
-        v.fm.resetResults();
-      }
-    })).AddOption('delete', ComptechApp.CreateMenu('delete', {
-      caption: function caption(record) {
-        return 'Șterge';
-      },
-      icon: 'la la-trash',
-      html_class: {
-        'm--font-danger': true
-      },
-      clicktype: 'event',
-      event: 'record-action-click',
-      onClick: function onClick(v, record) {
-        v.grid.visible = false;
-        v.filter.visible = false;
-        v.form.visible = true;
-        v.form.action = 'delete';
-        v.form.record = record;
-        v.fm.resetResults();
-      }
-    }))
-  })
+  actions: Columns.Actions(10)
 };
 
 /***/ }),
@@ -52886,8 +52965,8 @@ module.exports = {
 
 module.exports = ComptechApp.CreateDatatable('datatable-breeds', {
   default_order: {
-    key: 'id',
-    fields: ['breeds.id'],
+    key: 'breed',
+    fields: ['breeds.breed'],
     direction: 'asc'
   },
   columns: __webpack_require__(/*! ./columns */ "./resources/js/Apps/Views/Sistem/Breeds/columns.js")
@@ -53038,66 +53117,20 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./resources/js/Apps/Views/Sistem/Colors/columns.js ***!
   \**********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var Columns = __webpack_require__(/*! ./../../../Columns/Columns */ "./resources/js/Apps/Columns/Columns.js");
 
 module.exports = {
-  reccount: ComptechApp.CreateColumn('reccout', {
-    width: 10,
-    caption: '#',
-    type: 'reccount',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
-  id: ComptechApp.CreateColumn('id', {
-    width: 10,
-    caption: 'ID',
-    orderby: ['colors.id'],
-    direction: 'asc',
-    source: 'id',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
+  reccount: Columns.RecCount(10),
   color: ComptechApp.CreateColumn('color', {
-    width: 70,
+    width: 80,
     caption: 'Denumire',
     orderby: ['colors.color'],
     direction: 'asc',
     source: 'color'
   }),
-  actions: ComptechApp.CreateColumn('actions', {
-    width: 10,
-    caption: 'Acțiuni',
-    component: 'actions',
-    type: null,
-    source: 'code',
-    actions: ComptechApp.CreateMenu('actions').AddOption('update', ComptechApp.CreateMenu('update', {
-      caption: function caption(record) {
-        return 'Editează';
-      },
-      icon: 'la la-pencil',
-      html_class: {
-        'm--font-primary': true
-      },
-      clicktype: 'click',
-      onClick: function onClick(v) {
-        alert('Update ' + v.record.id);
-      }
-    })).AddOption('delete', ComptechApp.CreateMenu('delete', {
-      caption: function caption(record) {
-        return 'Șterge';
-      },
-      icon: 'la la-trash',
-      html_class: {
-        'm--font-danger': true
-      },
-      clicktype: 'click',
-      onClick: function onClick(v) {
-        alert('delete ' + v.record.id);
-      }
-    }))
-  })
+  actions: Columns.Actions(10)
 };
 
 /***/ }),
@@ -53111,8 +53144,8 @@ module.exports = {
 
 module.exports = ComptechApp.CreateDatatable('datatable-colors', {
   default_order: {
-    key: 'id',
-    fields: ['colors.id'],
+    key: 'color',
+    fields: ['colors.color'],
     direction: 'asc'
   },
   columns: __webpack_require__(/*! ./columns */ "./resources/js/Apps/Views/Sistem/Colors/columns.js")
@@ -53263,17 +53296,12 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./resources/js/Apps/Views/Sistem/Companies/columns.js ***!
   \*************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var Columns = __webpack_require__(/*! ./../../../Columns/Columns */ "./resources/js/Apps/Columns/Columns.js");
 
 module.exports = {
-  reccount: ComptechApp.CreateColumn('reccout', {
-    width: 10,
-    caption: '#',
-    type: 'reccount',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
+  reccount: Columns.RecCount(10),
   name: ComptechApp.CreateColumn('name', {
     width: 70,
     caption: 'Denumire',
@@ -53289,41 +53317,7 @@ module.exports = {
       return !record.logo ? null : '<img class="img-fluid" src="' + record.logo + '" />';
     }
   }),
-  actions: ComptechApp.CreateColumn('actions', {
-    width: 10,
-    caption: 'Acțiuni',
-    component: 'actions',
-    type: null,
-    source: 'code',
-    html_style: {
-      'text-align': 'center'
-    },
-    actions: ComptechApp.CreateMenu('actions').AddOption('update', ComptechApp.CreateMenu('update', {
-      caption: function caption(record) {
-        return 'Editează';
-      },
-      icon: 'la la-pencil',
-      html_class: {
-        'm--font-primary': true
-      },
-      clicktype: 'click',
-      onClick: function onClick(v) {
-        alert('Update ' + v.record.id);
-      }
-    })).AddOption('delete', ComptechApp.CreateMenu('delete', {
-      caption: function caption(record) {
-        return 'Șterge';
-      },
-      icon: 'la la-trash',
-      html_class: {
-        'm--font-danger': true
-      },
-      clicktype: 'click',
-      onClick: function onClick(v) {
-        alert('delete ' + v.record.id);
-      }
-    }))
-  })
+  actions: Columns.Actions(10)
 };
 
 /***/ }),
@@ -53337,8 +53331,8 @@ module.exports = {
 
 module.exports = ComptechApp.CreateDatatable('datatable-companies', {
   default_order: {
-    key: 'id',
-    fields: ['companies.id'],
+    key: 'name',
+    fields: ['companies.name'],
     direction: 'asc'
   },
   columns: __webpack_require__(/*! ./columns */ "./resources/js/Apps/Views/Sistem/Companies/columns.js")
@@ -53489,29 +53483,14 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./resources/js/Apps/Views/Sistem/Countries/columns.js ***!
   \*************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var Columns = __webpack_require__(/*! ./../../../Columns/Columns */ "./resources/js/Apps/Columns/Columns.js");
 
 module.exports = {
-  reccount: ComptechApp.CreateColumn('reccout', {
-    width: 10,
-    caption: '#',
-    type: 'reccount',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
-  id: ComptechApp.CreateColumn('id', {
-    width: 10,
-    caption: 'ID',
-    orderby: ['geo_countries.id'],
-    direction: 'asc',
-    source: 'id',
-    html_style: {
-      'text-align': 'right'
-    }
-  }),
+  reccount: Columns.RecCount(10),
   name: ComptechApp.CreateColumn('name', {
-    width: 50,
+    width: 60,
     caption: 'Denumire',
     orderby: ['geo_countries.name'],
     direction: 'asc',
@@ -53532,38 +53511,7 @@ module.exports = {
       return !record.icon ? null : '<img class="img-fluid" src="' + record.icon + '" />';
     }
   }),
-  actions: ComptechApp.CreateColumn('actions', {
-    width: 10,
-    caption: 'Acțiuni',
-    component: 'actions',
-    type: null,
-    source: 'code',
-    actions: ComptechApp.CreateMenu('actions').AddOption('update', ComptechApp.CreateMenu('update', {
-      caption: function caption(record) {
-        return 'Editează';
-      },
-      icon: 'la la-pencil',
-      html_class: {
-        'm--font-primary': true
-      },
-      clicktype: 'click',
-      onClick: function onClick(v) {
-        alert('Update ' + v.record.id);
-      }
-    })).AddOption('delete', ComptechApp.CreateMenu('delete', {
-      caption: function caption(record) {
-        return 'Șterge';
-      },
-      icon: 'la la-trash',
-      html_class: {
-        'm--font-danger': true
-      },
-      clicktype: 'click',
-      onClick: function onClick(v) {
-        alert('delete ' + v.record.id);
-      }
-    }))
-  })
+  actions: Columns.Actions(10)
 };
 
 /***/ }),
@@ -53577,8 +53525,8 @@ module.exports = {
 
 module.exports = ComptechApp.CreateDatatable('datatable-countries', {
   default_order: {
-    key: 'id',
-    fields: ['geo_countries.id'],
+    key: 'name',
+    fields: ['geo_countries.name'],
     direction: 'asc'
   },
   columns: __webpack_require__(/*! ./columns */ "./resources/js/Apps/Views/Sistem/Countries/columns.js")

@@ -1,8 +1,8 @@
 module.exports = ComptechApp.CreateDatatable('datatable-colors', {
 
     default_order: {
-        key: 'id',
-        fields: ['colors.id'],
+        key: 'color',
+        fields: ['colors.color'],
         direction: 'asc'
     },
     columns: require('./columns')

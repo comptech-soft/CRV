@@ -14,19 +14,26 @@
             portlets() {
                 return {
                     grid: {
-                        title: 'Rase de vaci',
-                        actions: require('./../../../Menus/Portlets/GridActions'),
+                        title: 'Rase',
+                        actions: require('./../../../Menus/Portlets/GridActions')({
+                            insert: true,
+                            filter: false,
+                            'delete-all': false,
+                            download: false,
+                            upload: false,
+                            refresh: true
+                        }),
                         datafetch: {
                             endpoint: 'system/breeds/get-records',
                             searchable: {
-                                fields: ['breeds.id', 'breeds.breed', 'breeds.code'],
+                                fields: ['breeds.breed', 'breeds.code'],
                                 value: null,
                             }
                         },
                         datatable: require('./datatable'),
                     },
                     form: {
-                        title: 'Rase de vaci. Formular',
+                        title: 'Rase. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
                         layout: require('./../../../Menus/FormActions/FormActions')({
                             insert: 'system/breeds/actions/insert',
@@ -36,7 +43,7 @@
                         component: 'breed-controls',
                     },
                     filter: {
-                        title: 'Rase de animale. Filtrare',
+                        title: 'Rase. Filtrare',
                         actions: require('./../../../Menus/Portlets/FilterActions'),
                     }
                 }

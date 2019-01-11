@@ -1,8 +1,8 @@
 module.exports = ComptechApp.CreateDatatable('datatable-breeds', {
 
     default_order: {
-        key: 'id',
-        fields: ['breeds.id'],
+        key: 'breed',
+        fields: ['breeds.breed'],
         direction: 'asc'
     },
     columns: require('./columns')

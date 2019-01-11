@@ -3785,7 +3785,7 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     form_layout: function form_layout() {
       return {
-        caption: this.form.layout[this.form.action].header.caption,
+        caption: this.portlets.grid.title + '. ' + this.form.layout[this.form.action].header.caption,
         btn_caption: this.form.layout[this.form.action].button.caption,
         btn_icon: this.form.layout[this.form.action].button.icon,
         btn_color: this.form.layout[this.form.action].button.color
@@ -4106,7 +4106,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "td.table-cell[data-v-06ae9b48] {\n  padding: 4px !important;\n  font-size: 12px !important;\n}", ""]);
+exports.push([module.i, "td.table-cell[data-v-06ae9b48] {\n  padding: 3px 5px !important;\n  font-size: 12px !important;\n  border-left: 1px solid #ebedf2;\n  border-right: 1px solid #ebedf2;\n  border-bottom: 1px solid #ebedf2;\n  border-collapse: collapse;\n}", ""]);
 
 // exports
 
@@ -4144,7 +4144,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  /*\n  padding: 0.35rem !important;\n  font-size: 12px;\n  */\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "th.table-header-cell[data-v-5f152baa] {\n  /*\n  padding: 0.35rem !important;\n  font-size: 12px;\n  */\n  border: 1px solid #bdc3d4;\n  border-collapse: collapse;\n}\nth.table-header-cell span.current[data-v-5f152baa] {\n  color: #535be2 !important;\n  font-weight: bold;\n}\nth.table-header-cell span[data-v-5f152baa] {\n  cursor: pointer;\n}", ""]);
 
 // exports
 

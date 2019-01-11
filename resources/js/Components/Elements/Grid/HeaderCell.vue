@@ -73,5 +73,7 @@
         span {
             cursor:pointer;
         }
+        border:1px solid #bdc3d4;
+        border-collapse: collapse;
     }
 </style>

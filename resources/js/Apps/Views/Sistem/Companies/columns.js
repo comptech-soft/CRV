@@ -1,13 +1,8 @@
+const Columns = require('./../../../Columns/Columns')
+
 module.exports = {
 
-    reccount: ComptechApp.CreateColumn('reccout', {
-        width: 10,
-        caption: '#', 
-        type: 'reccount',
-        html_style: {
-            'text-align': 'right'
-        }
-    }),
+    reccount: Columns.RecCount(10),
 
     name: ComptechApp.CreateColumn('name', {
         width: 70,
@@ -26,38 +21,6 @@ module.exports = {
         }
     }),
 
-    actions: ComptechApp.CreateColumn('actions', {
-        width: 10,
-        caption: 'Acțiuni', 
-        component: 'actions',
-        type: null,
-        source: 'code',
-        html_style: {
-            'text-align': 'center'
-        },
-        actions: ComptechApp.CreateMenu('actions')
-            .AddOption('update', ComptechApp.CreateMenu('update', {
-                caption: record => 'Editează',
-                icon: 'la la-pencil',
-                html_class: {
-                    'm--font-primary': true,
-                },
-                clicktype: 'click',
-                onClick: v => {
-                    alert('Update ' + v.record.id);
-                }
-            }))
-            .AddOption('delete', ComptechApp.CreateMenu('delete', {
-                caption: record => 'Șterge',
-                icon: 'la la-trash',
-                html_class: {
-                    'm--font-danger': true,
-                },
-                clicktype: 'click',
-                onClick: v => {
-                    alert('delete ' + v.record.id);
-                }
-            }))
-    })
+    actions: Columns.Actions(10),
     
 }
