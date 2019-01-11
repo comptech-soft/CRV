@@ -1881,24 +1881,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    errors: {
-      required: true,
-      default: null
-    },
-    action: {
-      required: true,
-      default: null
-    },
-    old: {
-      required: true,
-      default: null
-    }
-  },
   data: function data() {
     return {
-      ready: false,
-      timeout: null,
       record: {
         id: null,
         breed: null,
@@ -1906,58 +1890,52 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  computed: {
-    is_disabled: function is_disabled() {
-      return this.action === 'delete';
-    }
-  },
-  watch: {
-    'record': {
-      handler: function handler(newRecord, oldRecord) {
-        var _this = this;
+  mixins: [__webpack_require__(/*! ./../~Mixins/Controls */ "./resources/js/Components/Crv/Forms/~Mixins/Controls.js")]
+});
 
-        if (this.timeout) {
-          clearTimeout(this.timeout);
-        }
+/***/ }),
 
-        this.timeout = setTimeout(function () {
-          _this.$emit('current-record', _this.record);
-        }, 200);
-      },
-      deep: true
-    }
-  },
-  methods: {
-    getRecord: function getRecord() {
-      var _this2 = this;
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-      _.each(this.record, function (value, field) {
-        if (_this2.old.hasOwnProperty(field)) {
-          _this2.record[field] = _this2.old[field];
-        }
-      });
-    },
-    init: function init() {
-      if (!(this.old === null)) {
-        this.getRecord();
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      record: {
+        id: null,
+        color: null
       }
-
-      this.ready = true;
-      this.$emit('current-record', this.record);
-    }
+    };
   },
-  mounted: function mounted() {
-    var _this3 = this;
-
-    this.ready = false;
-    var i = setInterval(function () {
-      if (!(_this3.action === null)) {
-        clearInterval(i);
-
-        _this3.init();
-      }
-    }, 50);
-  }
+  mixins: [__webpack_require__(/*! ./../~Mixins/Controls */ "./resources/js/Components/Crv/Forms/~Mixins/Controls.js")]
 });
 
 /***/ }),
@@ -31505,7 +31483,7 @@ var render = function() {
             [
               _c("text-box", {
                 attrs: {
-                  id: "breed-code",
+                  id: "breeds-code",
                   field: "code",
                   placeholder: "Cod",
                   label: "Cod rasă",
@@ -31531,7 +31509,7 @@ var render = function() {
             [
               _c("text-box", {
                 attrs: {
-                  id: "breed-breed",
+                  id: "breeds-breed",
                   field: "breed",
                   placeholder: "Denumire",
                   label: "Denumire rasă",
@@ -31545,6 +31523,60 @@ var render = function() {
                     _vm.$set(_vm.record, "breed", $$v)
                   },
                   expression: "record.breed"
+                }
+              })
+            ],
+            1
+          )
+        ])
+      ])
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=template&id=61940a08&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=template&id=61940a08& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.ready
+    ? _c("div", [
+        _c("div", { staticClass: "row" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c("text-box", {
+                attrs: {
+                  id: "colors-color",
+                  field: "color",
+                  placeholder: "Denumire",
+                  label: "Denumire culoare",
+                  disabled: _vm.is_disabled,
+                  maxlength: "128",
+                  errors: _vm.errors
+                },
+                model: {
+                  value: _vm.record.color,
+                  callback: function($$v) {
+                    _vm.$set(_vm.record, "color", $$v)
+                  },
+                  expression: "record.color"
                 }
               })
             ],
@@ -51832,6 +51864,7 @@ var map = {
 	"./Controls/Checks/CheckBox.vue": "./resources/js/Components/Controls/Checks/CheckBox.vue",
 	"./Controls/Textboxes/TextBox.vue": "./resources/js/Components/Controls/Textboxes/TextBox.vue",
 	"./Crv/Forms/Sistem/BreedControls.vue": "./resources/js/Components/Crv/Forms/Sistem/BreedControls.vue",
+	"./Crv/Forms/Sistem/ColorControls.vue": "./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue",
 	"./Elements/AlertElement.vue": "./resources/js/Components/Elements/AlertElement.vue",
 	"./Elements/FormElement.vue": "./resources/js/Components/Elements/FormElement.vue",
 	"./Elements/Grid/CellActions.vue": "./resources/js/Components/Elements/Grid/CellActions.vue",
@@ -52235,6 +52268,159 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BreedControls_vue_vue_type_template_id_5f24d8e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ColorControls_vue_vue_type_template_id_61940a08___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColorControls.vue?vue&type=template&id=61940a08& */ "./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=template&id=61940a08&");
+/* harmony import */ var _ColorControls_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ColorControls.vue?vue&type=script&lang=js& */ "./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ColorControls_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ColorControls_vue_vue_type_template_id_61940a08___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ColorControls_vue_vue_type_template_id_61940a08___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/Components/Crv/Forms/Sistem/ColorControls.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorControls_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ColorControls.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorControls_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=template&id=61940a08&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=template&id=61940a08& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorControls_vue_vue_type_template_id_61940a08___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ColorControls.vue?vue&type=template&id=61940a08& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Crv/Forms/Sistem/ColorControls.vue?vue&type=template&id=61940a08&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorControls_vue_vue_type_template_id_61940a08___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColorControls_vue_vue_type_template_id_61940a08___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Crv/Forms/~Mixins/Controls.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/Components/Crv/Forms/~Mixins/Controls.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  props: {
+    errors: {
+      required: true,
+      default: null
+    },
+    action: {
+      required: true,
+      default: null
+    },
+    old: {
+      required: true,
+      default: null
+    }
+  },
+  data: function data() {
+    return {
+      ready: false,
+      timeout: null
+    };
+  },
+  computed: {
+    is_disabled: function is_disabled() {
+      return this.action === 'delete';
+    }
+  },
+  watch: {
+    'record': {
+      handler: function handler(newRecord, oldRecord) {
+        var _this = this;
+
+        if (this.timeout) {
+          clearTimeout(this.timeout);
+        }
+
+        this.timeout = setTimeout(function () {
+          _this.$emit('current-record', _this.record);
+        }, 200);
+      },
+      deep: true
+    }
+  },
+  methods: {
+    getRecord: function getRecord() {
+      var _this2 = this;
+
+      _.each(this.record, function (value, field) {
+        if (_this2.old.hasOwnProperty(field)) {
+          _this2.record[field] = _this2.old[field];
+        }
+      });
+    },
+    init: function init() {
+      if (!(this.old === null)) {
+        this.getRecord();
+      }
+
+      this.ready = true;
+      this.$emit('current-record', this.record);
+    }
+  },
+  mounted: function mounted() {
+    var _this3 = this;
+
+    this.ready = false;
+    var i = setInterval(function () {
+      if (!(_this3.action === null)) {
+        clearInterval(i);
+
+        _this3.init();
+      }
+    }, 50);
+  }
+};
 
 /***/ }),
 

@@ -35,6 +35,12 @@
                     form: {
                         title: 'Culori. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
+                        layout: require('./../../../Menus/FormActions/FormActions')({
+                            insert: 'system/colors/actions/insert',
+                            update: 'system/colors/actions/update',
+                            delete: 'system/colors/actions/delete',
+                        }),
+                        component: 'color-controls',
                     },
                     filter: {
                         title: 'Culori. Filtrare',

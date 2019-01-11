@@ -24,9 +24,9 @@ trait Rules {
     public static function getMessages($action, $data) {
         return [
             'code.required' => 'Codul trebuie completat',
-            'code.unique' => 'Codul ' . $data['code'] . ' exisită.',
+            'code.unique' => 'Codul ' . $data['code'] . ' există.',
             'breed.required' => 'Denumirea trebuie completată',
-            'breed.unique' => 'Denumirea ' . $data['breed'] . ' exisită.',
+            'breed.unique' => 'Denumirea ' . $data['breed'] . ' există.',
         ];
     }
 

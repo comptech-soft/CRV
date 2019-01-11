@@ -28,6 +28,7 @@ Route::middleware(['is-authenticated'])->group(function(){
     Route::post('system/breeds/actions/{action}', 'System\BreedsController@actionDispatch');
 
     Route::post('system/colors/get-records', 'System\ColorsController@getRecords');
+    Route::post('system/colors/actions/{action}', 'System\ColorsController@actionDispatch');
 
     Route::post('system/countries/get-records', 'System\CountriesController@getRecords');
 

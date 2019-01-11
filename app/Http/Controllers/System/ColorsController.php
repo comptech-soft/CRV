@@ -14,4 +14,8 @@ class ColorsController extends Controller
         return Color::getRecords($request->all());
     }
 
+    public function actionDispatch($action, Request $request) {
+        return Color::actionDispatch($action, $request->all());
+    }
+
 }
