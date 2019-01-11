@@ -21,9 +21,12 @@ module.exports = [
     /**
      * Tauri generali
      */
-    require('./Sires/Sires'),
+    require('./Animals/Sires'),
+    require('./Animals/Ameliorare'),
     
-
+    /**
+     * Footer
+     */
     require('./Footer/About'),
     require('./Footer/Privacy'),
     require('./Footer/Terms'),
