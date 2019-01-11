@@ -3,9 +3,9 @@
         :class="alert_class" 
         role="alert"
     >
-        <span v-if="icon" class="alert-icon">
+        <div v-if="icon" class="m-alert__icon">
             <i :class="icon"></i>
-        </span>
+        </div>
         
         <button 
             v-if="closable" 
@@ -22,8 +22,8 @@
             {{ short_caption}}
         </strong> 
 
-        <span v-html="message">
-        </span>
+        <div class="m-alert__text" v-html="message">
+        </div>
     </div>
 </template>
 
@@ -43,7 +43,7 @@
                 let r = _.extend({}, this.a_class)
                 r['alert'] = true
                 r['alert-dismissible'] = this.closable
-                r['alert-icon-left'] = this.icon
+                r['m-alert--icon'] = this.icon
                 return r
             }
         },

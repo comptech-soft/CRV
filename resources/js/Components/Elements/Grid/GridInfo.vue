@@ -1,6 +1,6 @@
 <template>
     <div v-if="loading" class="alert alert-warning" role="alert">
-        <i class="la la-refresh spinner"></i>
+        <i class="fa fa-spinner fa-spin"></i>
         Se actualizează...
     </div>
     <div v-else-if="total > 0" class="alert alert-secondary" role="alert">

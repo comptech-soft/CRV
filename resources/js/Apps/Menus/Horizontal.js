@@ -27,6 +27,11 @@ module.exports = (state) => {
                     caption: 'Țări, regiuni, județe, localități',
                     route: {name: 'countries'},
                 },
+                {
+                    name: 'companies',
+                    caption: 'Firme',
+                    route: {name: 'companies'},
+                },
             ]
         },
         

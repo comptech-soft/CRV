@@ -1,6 +1,6 @@
 <template>
     <grid-form-filter
-        id="breeds"
+        id="companies"
         :portlets="portlets"
     >
     </grid-form-filter>
@@ -14,29 +14,23 @@
             portlets() {
                 return {
                     grid: {
-                        title: 'Rase de vaci',
+                        title: 'Firme',
                         actions: require('./../../../Menus/Portlets/GridActions'),
                         datafetch: {
-                            endpoint: 'system/breeds/get-records',
+                            endpoint: 'system/companies/get-records',
                             searchable: {
-                                fields: ['breeds.id', 'breeds.breed', 'breeds.code'],
+                                fields: ['companies.name'],
                                 value: null,
                             }
                         },
                         datatable: require('./datatable'),
                     },
                     form: {
-                        title: 'Rase de vaci. Formular',
+                        title: 'Firme. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
-                        layout: require('./../../../Menus/FormActions/FormActions')({
-                            insert: 'system/breeds/actions/insert',
-                            update: 'system/breeds/actions/update',
-                            delete: 'system/breeds/actions/delete',
-                        }),
-                        component: 'breed-controls',
                     },
                     filter: {
-                        title: 'Rase de animale. Filtrare',
+                        title: 'Firme. Filtrare',
                         actions: require('./../../../Menus/Portlets/FilterActions'),
                     }
                 }

@@ -39,6 +39,11 @@
             <slot>
             </slot>
         </div>
+
+        <div v-if="has_footer" class="m-portlet__foot">
+            <slot name="portlet-footer">
+            </slot>
+        </div>
     </div>
 </template>
 
@@ -53,7 +58,8 @@
                     subtitle: ''
                 }
             }},
-            actions: {default: null} 
+            actions: {default: null},
+            has_footer: {type: Boolean, default: false}
         },
 
         computed: {

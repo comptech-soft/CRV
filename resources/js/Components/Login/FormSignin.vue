@@ -59,6 +59,7 @@
 						@click="onClickLogin"
 					>
 						Sign In
+						<i v-if="formManager && formManager.processing" class="fa fa-spinner fa-spin"></i>
 					</button>
 				</div>
 			</template>
@@ -90,8 +91,10 @@
             this.formManager = new ComptechApp.FormManager(
 				this, 
 				'login', 
-				data => {ComptechApp.Http.redirect()}, 
-				data => {console.log(data)}
+				data => ComptechApp.Http.redirect(), 
+				data => {
+					console.log(data)
+				}
 			)
         },
 	}

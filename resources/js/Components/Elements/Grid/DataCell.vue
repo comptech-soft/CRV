@@ -7,7 +7,10 @@
             :is="'cell-' + column.component"
             :control="column"
             :record="record"
-            @click="onCellActionClick"
+            :current_page="current_page"
+            :per_page="per_page"
+            :row="row"
+            @record-action-click="onRecordActionClick"
         >
         </component>
     </td>
@@ -21,11 +24,11 @@
             id: {required: true},
             row: {required: true},
             record: {required: true},
+            current_page: {},
+            per_page: {},
         },
 
         computed: {
-
-
             cellStyle() {
                 let r = {}
                 r['width'] = this.column.width + '%'
@@ -41,26 +44,19 @@
         },
 
         methods: {
-            onCellActionClick(event) {
-                this.$emit('cell-action-click', {
+            onRecordActionClick(event) {
+                this.$emit('record-action-click', {
                     event,
                     record: this.record,
                 })
             }
         },
-
-        // components: {
-        //     'cell-text': require('./CellText'),
-        //     'cell-actions': require('./CellActions')
-        // }
     }
 </script>
 
 <style lang="scss" scoped>
     td.table-cell {
-        /*
-        padding: 0.35rem !important;
-        font-size: 12px;
-        */
+        padding: 4px !important;
+        font-size: 12px !important;
     }
 </style>

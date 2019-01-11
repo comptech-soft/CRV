@@ -9,39 +9,20 @@ module.exports = {
         }
     }),
 
-    id: ComptechApp.CreateColumn('id', {
-        width: 10,
-        caption: 'ID', 
-        orderby: ['geo_countries.id'], 
-        direction: 'asc', 
-        source: 'id',
-        html_style: {
-            'text-align': 'right'
-        }
-    }),
-
     name: ComptechApp.CreateColumn('name', {
-        width: 50,
+        width: 70,
         caption: 'Denumire', 
-        orderby: ['geo_countries.name'], 
+        orderby: ['companies.name'], 
         direction: 'asc', 
         source: 'name'
     }),
 
-    code: ComptechApp.CreateColumn('code', {
+    logo: ComptechApp.CreateColumn('logo', {
         width: 10,
-        caption: 'Cod', 
-        orderby: ['geo_countries.code'], 
-        direction: 'asc', 
-        source: 'code'
-    }),
-
-    icon: ComptechApp.CreateColumn('icon', {
-        width: 10,
-        caption: 'Icon',
+        caption: 'Logo',
         type: 'html', 
         source: record => {
-            return ! record.icon ? null : '<img class="img-fluid" src="' + record.icon + '" />'
+            return ! record.logo ? null : '<img class="img-fluid" src="' + record.logo + '" />'
         }
     }),
 
@@ -51,6 +32,9 @@ module.exports = {
         component: 'actions',
         type: null,
         source: 'code',
+        html_style: {
+            'text-align': 'center'
+        },
         actions: ComptechApp.CreateMenu('actions')
             .AddOption('update', ComptechApp.CreateMenu('update', {
                 caption: record => 'Editează',

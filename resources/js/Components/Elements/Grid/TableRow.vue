@@ -8,7 +8,9 @@
             :index="index"
             :row="row"
             :record="record"
-            @cell-action-click="onCellActionClick"
+            :current_page="current_page"
+            :per_page="per_page"
+            @record-action-click="onRecordActionClick"
         >     
         </data-cell>
     </tr>
@@ -19,12 +21,14 @@
         props: {
             columns: {required: true},
             row: {required: true},
-            record: {required: true}
+            record: {required: true},
+            current_page: {},
+            per_page: {},
         },
 
         methods: {
-            onCellActionClick(event) {
-                this.$emit('cell-action-click', event)
+            onRecordActionClick(event) {
+                this.$emit('record-action-click', event)
             }
         },
         

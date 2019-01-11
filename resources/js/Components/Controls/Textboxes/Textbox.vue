@@ -17,6 +17,7 @@
             :disabled="disabled"
             :readonly="readonly"
             :required="required"
+            :maxlength="maxlength"
             :value="value"
 
             @input="$emit('input', $event.target.value)"

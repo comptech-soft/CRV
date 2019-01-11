@@ -8,6 +8,9 @@
         props: {
             control: {required: true},
             record: {required: true},
+            current_page: {},
+            per_page: {},
+            row: {},
         },
         
         methods: {
@@ -23,6 +26,15 @@
                  */
 
                 return record[control.source]
+            },
+
+            renderReccount(control, record) {
+                let r = (this.current_page - 1) * this.per_page + this.row + 1 
+                return '#' + r
+            },
+
+            renderHtml(control, record) {
+                return control.source(record)
             },
 
             renderCell(control, record) {

@@ -28,6 +28,11 @@ class FormManager {
         this.errors_bag = null
     }
 
+    setEndpoint(endpoint) {
+        this.endpoint = endpoint
+        return this
+    }
+
     getErrors() {
         return this.errors_bag
     }
@@ -80,7 +85,7 @@ class FormManager {
         return this.onFailResponse(response, onFail)
     }
 
-    onSubmit(options) {
+    onSubmit(options = {}) {
 
         options = _.extend(options, {
             endpoint: this.endpoint,

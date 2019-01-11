@@ -2,13 +2,18 @@
  * La afisarea formularului insert 
  */
 const onInsert = v => {
+
+    /** Ascund gridul si filtrarea */
+    v.grid.visible = false
+    v.filter.visible = false
+
     /** Formularul devine vizibil */
     v.form.visible = true
+    v.form.action = 'insert'
+    v.form.record = null
     
-    /** Deactivez toate butoanele din toolbar */
-    _.each(v.grid.actions.options, action => {
-        action.enabled = false
-    })
+    /** Resetez form manager (fm) */
+    v.fm.resetResults()
 }
 
 const onFilter = v => {

@@ -6,7 +6,9 @@
             :record="record"
             :columns="columns"
             :row="row"
-            @cell-action-click="onCellActionClick"
+            :current_page="current_page"
+            :per_page="per_page"
+            @record-action-click="onRecordActionClick"
         >
         </table-row>
     </tbody>
@@ -16,12 +18,14 @@
     export default {
         props: {
             columns: {required: true},
-            records: {type: Array, default: () => []}
+            records: {type: Array, default: () => []},
+            current_page: {},
+            per_page: {},
         },
 
          methods: {
-            onCellActionClick(event) {
-                this.$emit('cell-action-click', event)
+            onRecordActionClick(event) {
+                this.$emit('record-action-click', event)
             }
         },
     }

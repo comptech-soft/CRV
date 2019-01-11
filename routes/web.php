@@ -25,10 +25,12 @@ Route::middleware(['is-authenticated'])->group(function(){
 
 
     Route::post('system/breeds/get-records', 'System\BreedsController@getRecords');
-    // Route::post('roles/{action}', 'RolesController@actionDispatch')->name('roles-actions');
+    Route::post('system/breeds/actions/{action}', 'System\BreedsController@actionDispatch');
 
     Route::post('system/colors/get-records', 'System\ColorsController@getRecords');
 
     Route::post('system/countries/get-records', 'System\CountriesController@getRecords');
+
+    Route::post('system/companies/get-records', 'System\CompaniesController@getRecords');
 
 });

@@ -66,6 +66,7 @@ class Boot {
         window[name]['CreateDatatable'] = require('./../Datatable/CreateDatatable')
         window[name]['CreateColumn'] = require('./../Datatable/CreateColumn')
         window[name]['DataFetch'] = require('./../DataFetch/DataFetch')
+        window[name]['CreateAction'] = require('./../FormAction/CreateAction')
     }
 
     LoadLodash() {

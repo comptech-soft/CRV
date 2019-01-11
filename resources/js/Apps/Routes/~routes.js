@@ -8,6 +8,7 @@ module.exports = [
     require('./Sistem/Breeds'),
     require('./Sistem/Colors'),
     require('./Sistem/Countries'),
+    require('./Sistem/Companies'),
     
 
     require('./Footer/About'),

@@ -81,7 +81,9 @@
                 <table-body
                     :columns="datatable.columns"
                     :records="records"
-                    @cell-action-click="onCellActionClick"
+                    :current_page="df.current_page"
+                    :per_page="df.per_page"
+                    @record-action-click="onRecordActionClick"
                 >
                 </table-body>
 
@@ -152,8 +154,8 @@
                 this.df.onPerPageSelected(per_page)
             },
 
-            onCellActionClick(event) {
-                this.$emit('cell-action-click', event)
+            onRecordActionClick(event) {
+                this.$emit('record-action-click', event)
             }
         },
     }
