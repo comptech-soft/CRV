@@ -9,21 +9,21 @@
             </div>
 
             <!-- 
-                doar daca avem user logat, avem meniu brand 
+                doar daca avem user logat
             -->
-            <div v-if="$app.user && $brand.menu" class="m-stack__item m-stack__item--middle m-brand__tools">
+            <div v-if="$app.user" class="m-stack__item m-stack__item--middle m-brand__tools">
                 <div 
                     class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push"
                     m-dropdown-toggle="click" 
                     aria-expanded="true"
                     id="m-brand-dropdown"
                 >
-                    <a href="#" class="dropdown-toggle m-dropdown__toggle btn btn-outline-metal m-btn m-btn--icon m-btn--pill">
+                    <a v-if="$brand.menu" href="#" class="dropdown-toggle m-dropdown__toggle btn btn-outline-metal m-btn m-btn--icon m-btn--pill">
                         <span>
                             {{$brand.menu.caption}}
                         </span>
                     </a>
-                    <div class="m-dropdown__wrapper">
+                    <div v-if="$brand.menu" class="m-dropdown__wrapper">
                         <span class="m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust">
                         </span>
                         <div class="m-dropdown__inner">

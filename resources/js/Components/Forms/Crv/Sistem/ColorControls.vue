@@ -33,7 +33,7 @@
         },
 
         mixins: [
-            require('./../~Mixins/Controls')
+            require('./../../~Mixins/Controls')
         ]
 
     }

@@ -1,5 +1,5 @@
 <template>
-    <tbody class="m-datatable__body">
+    <tbody>
         <table-row
             v-for="(record, row) in records"
             :key="'table-row-' + row"

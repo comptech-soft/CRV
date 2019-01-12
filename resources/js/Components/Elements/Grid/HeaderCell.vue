@@ -1,6 +1,6 @@
 <template>
     <th
-        class="m-datatable__cell table-header-cell"
+        class="table-header-cell"
         :style="cellStyle"
     >
         <div v-html="column.caption">

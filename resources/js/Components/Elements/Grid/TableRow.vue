@@ -1,5 +1,5 @@
 <template>
-    <tr class="m-datatable__row">
+    <tr>
         <data-cell
             v-for="(column, key, index) in columns"
             :key="'data-cell-' + key"

@@ -15,6 +15,7 @@
             @record-action-click="onRecordActionClick"
         >
         </component>
+
     </td>
 </template>
 
@@ -45,7 +46,7 @@
 
             cellClass() {
                 let r = {
-                    'm-datatable__cell': true, 
+                    'm-datatable__cell': false, 
                     'table-cell': true
                 }
                 return r

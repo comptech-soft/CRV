@@ -1,6 +1,6 @@
 <template>
-    <thead class="m-datatable__head">
-        <tr class="m-datatable__row">
+    <thead>
+        <tr>
             <header-cell
                 v-for="(column, key, index) in columns"
                 :key="'header-cell-' + key"

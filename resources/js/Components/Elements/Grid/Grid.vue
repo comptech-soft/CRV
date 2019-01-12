@@ -67,12 +67,13 @@
         
         <!-- Datatable -->
 		<div 
-            class="m_datatable m-datatable m-datatable--default m-datatable--brand m-datatable--subtable m-datatable--loaded" 
-            id="child_data_local" 
+            class="table-responsive" 
             style=""
             v-if="df.total > 0"
         >
-            <table class="m-datatable__table" style="display: block; min-height: 300px; overflow-x: auto;">
+            <table 
+                class="table table-bordered table-sm m-table m-table--head-bg-brand cs-table" 
+            >
 
                 <table-header
                     :columns="datatable.columns"
@@ -92,26 +93,30 @@
 
             </table>
 
-            <div class="m-datatable__pager m-datatable--paging-loaded clearfix">
-                <pagination
-                    :id="'pagination-bottom-' + id"
-                    :current_page="df.current_page"
-                    :last_page="df.last_page"
-                    @change-page="onChangePage"
-                >
-                </pagination>
-
-                <div style="width:160px; float:right">
-                    <perpage-selector
-                        :id="'perpage-selector-bottom-' + id"
-                        :options="datatable.per_page_options"
-                        :value="df.per_page"
-                        @per_page_selected="onPerPageSelected"
-                    >
-                    </perpage-selector>
+            <div class="row">
+                <div class="col-md-4">
+                    <div style="width:160px">
+                        <perpage-selector
+                            :id="'perpage-selector-bottom-' + id"
+                            :options="datatable.per_page_options"
+                            :value="df.per_page"
+                            @per_page_selected="onPerPageSelected"
+                        >
+                        </perpage-selector>
+                    </div>
                 </div>
 
-                <div class="clearfix"></div>
+                <div class="m_datatable m-datatable m-datatable--default m-datatable--brand m-datatable--subtable m-datatable--loaded col-md-8">
+                    <div class="m-datatable__pager" style="text-align:right; margin-top:6px;">
+                        <pagination
+                            :id="'pagination-bottom-' + id"
+                            :current_page="df.current_page"
+                            :last_page="df.last_page"
+                            @change-page="onChangePage"
+                        >
+                        </pagination>
+                    </div>
+                </div>>
             </div>
 		</div>
     </div>

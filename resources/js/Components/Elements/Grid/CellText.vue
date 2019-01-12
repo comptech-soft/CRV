@@ -1,8 +1,9 @@
 <template>
-    <span class="text-overflow-dynamic-container">
-        <span :class="html_class" class="text-overflow-dynamic-ellipsis" v-html="renderCell(control, record)">
-        </span>
-    </span>    
+    <div class="parent-cell">
+        <div class="child-cell" v-html="renderCell(control, record)">
+
+        </div>
+    </div>
 </template>
 
 
@@ -62,35 +63,14 @@
 </script>
 
 <style lang="scss" scoped>
-    
-    .text-overflow-dynamic-container {
-        position: relative;
-        max-width: 100%;
-        padding: 0 !important;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: flex;
-        vertical-align: text-bottom !important;
-    }
-    .text-overflow-dynamic-ellipsis {
-        position: absolute;
-        white-space: nowrap;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-        -ms-text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        max-width: 100%;
-        min-width: 0;
-        width:100%;
-        top: 0;
-        left: 0;
-    }
-    .text-overflow-dynamic-container:after,
-    .text-overflow-dynamic-ellipsis:after {
-        content: '-';
-        display: inline;
-        visibility: hidden;
-        width: 0;
-    }
+div.parent-cell {
+  display: flex;
+}
+
+div.child-cell {
+  flex: 1;
+  width: 1px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
 </style>

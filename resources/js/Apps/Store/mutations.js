@@ -1,6 +1,7 @@
 const 
     FooterMenu = require('./../Menus/Footer'),
     BrandAnimalMenu = require('./../Menus/Brand/Animal'),
+    BrandFarmMenu = require('./../Menus/Brand/Farm'),
     QuickActionsMenu = require('./../Menus/QuickActions'),
     HorizontalMenu = require('./../Menus/Horizontal')
 
@@ -57,11 +58,15 @@ module.exports = {
         }
         if( options.type === 'animal')
         {
-            state.brand.menu = BrandAnimalMenu(options.record, state.user, state.role)
-            state.brand.record = options.record
-            state.brand.type = options.type
-            return null
+            state.brand.menu = BrandAnimalMenu(options.record, state.user, state.role)            
         }
+        if( options.type === 'farm')
+        {
+            state.brand.menu = BrandFarmMenu(options.record, state.user, state.role)
+        }
+        state.brand.record = options.record
+        state.brand.type = options.type
+        return null
     },
 
     // getFarm(state, id) {

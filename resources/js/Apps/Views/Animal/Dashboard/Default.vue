@@ -54,7 +54,7 @@
             this.setBrandMenu({type: null});
         },
         
-        name: 'content-farm-dashboard',
+        name: 'content-animal-dashboard',
 
         
     }
