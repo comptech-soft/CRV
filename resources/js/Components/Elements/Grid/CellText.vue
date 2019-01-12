@@ -1,6 +1,6 @@
 <template>
     <span class="text-overflow-dynamic-container">
-        <span class="text-overflow-dynamic-ellipsis" v-html="renderCell(control, record)">
+        <span :class="html_class" class="text-overflow-dynamic-ellipsis" v-html="renderCell(control, record)">
         </span>
     </span>    
 </template>
@@ -17,6 +17,7 @@
             current_page: {},
             per_page: {},
             row: {},
+            html_class: {defaut: null}
         },
         
         methods: {
@@ -74,7 +75,7 @@
     .text-overflow-dynamic-ellipsis {
         position: absolute;
         white-space: nowrap;
-        overflow-y: visible;
+        overflow-y: hidden;
         overflow-x: hidden;
         text-overflow: ellipsis;
         -ms-text-overflow: ellipsis;

@@ -21,7 +21,7 @@
                         <horizontal-menu>
                         </horizontal-menu>
 
-                        <search>
+                        <search v-if="0">
                         </search>
                     </div>
                 </div>

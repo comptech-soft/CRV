@@ -40,6 +40,14 @@ module.exports = {
         caption: 'Denumire', 
         orderby: ['farms.farm'], 
         direction: 'asc', 
+        html_class: {
+            'm-link': true,
+            'm--font-bolder': true,
+        },
+        html_style: {
+            'cursor': 'pointer',
+        },
+        onClick: v => v.$router.push({name: 'farm-dashboard', params: {id: v.record.id}}),
         source: 'farm'
     }),
 

@@ -19,10 +19,20 @@ module.exports = [
     require('./Farms/Farms'),
 
     /**
+     * Farm
+     */
+    require('./Farm/Dashboard'),
+
+    /**
      * Tauri generali
      */
     require('./Animals/Sires'),
     require('./Animals/Ameliorare'),
+
+    /**
+     * Animal
+     */
+    require('./Animal/Dashboard'),
     
     /**
      * Footer

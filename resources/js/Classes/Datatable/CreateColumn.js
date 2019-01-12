@@ -11,9 +11,11 @@ module.exports = (name, options) => {
             direction: 'OrderByDirection',
             source: 'Source',
             html_style: 'HtmlStyle',
+            html_class: 'HtmlClass',
             component: 'Component',
             type: 'Type',
             actions: 'Actions',
+            onClick: 'onClick'
         }
 
     _.each(properties, (method, property) => {

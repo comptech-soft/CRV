@@ -1,4 +1,5 @@
 const Columns = require('./../../../Columns/Columns')
+const Attributes = require('./../../../Attributes/Animal')
 
 module.exports = {
 
@@ -15,21 +16,7 @@ module.exports = {
             'text-align': 'center',
             'font-size': '10px !important',
         },
-        source: record => {
-            if(record.animal_status === 'valid')
-            {
-                return '<span class="m-badge m-badge--success">V</span>'
-            }
-            if(record.animal_status === 'invalid')
-            {
-                return '<span class="m-badge m-badge--danger">I</span>'
-            }
-            if(record.animal_status === 'adaugat-ferna')
-            {
-                return '<span class="m-badge m-badge--warning">AF</span>'
-            }
-            return '-'
-        }
+        source: Attributes.Status
     }),
 
     LongName: ComptechApp.CreateColumn('long_name', {
@@ -39,8 +26,14 @@ module.exports = {
         direction: 'asc', 
         html_style: {
             'font-size': '10px !important',
+            'cursor': 'pointer',
         },
-        source: 'long_name'
+        html_class: {
+            'm-link': true,
+            'm--font-bolder': true,
+        },
+        source: 'long_name',
+        onClick: v => v.$router.push({name: 'animal-dashboard', params: {id: v.record.id}}),
     }),
 
     ShortName: ComptechApp.CreateColumn('short_name', {
@@ -60,9 +53,7 @@ module.exports = {
         html_style: {
             'font-size': '10px !important',
         },
-        source: record => {
-            return 'pedigreee'
-        }
+        source: Attributes.Pedigree
     })
     
 }

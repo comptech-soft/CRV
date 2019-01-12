@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Sires;
+namespace App\Http\Controllers\Animals;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

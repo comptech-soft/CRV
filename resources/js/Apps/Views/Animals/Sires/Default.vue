@@ -24,7 +24,7 @@
                             refresh: true
                         }),
                         datafetch: {
-                            endpoint: 'system/sires/get-records',
+                            endpoint: 'animals/sires/get-records',
                             searchable: {
                                 fields: ['animals.interbull_code'],
                                 value: null,
@@ -36,9 +36,9 @@
                         title: 'Ferme. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
                         layout: require('./../../../Menus/FormActions/FormActions')({
-                            insert: 'system/sires/actions/insert',
-                            update: 'system/sires/actions/update',
-                            delete: 'system/sires/actions/delete',
+                            insert: 'animals/sires/actions/insert',
+                            update: 'animals/sires/actions/update',
+                            delete: 'animals/sires/actions/delete',
                         }),
                         component: 'farm-controls',
                     },

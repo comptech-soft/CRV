@@ -13,6 +13,8 @@ module.exports = {
      */
     brand: {
         menu: null,
+        record: null,
+        type: null,
     },
 
     /**

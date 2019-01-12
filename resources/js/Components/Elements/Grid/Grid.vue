@@ -174,7 +174,6 @@
         },
 
         mounted() {
-            console.log('Grid is mounted')
         }
     }
 </script>

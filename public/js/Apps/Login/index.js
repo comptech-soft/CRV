@@ -2406,6 +2406,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     record: {
       required: true
+    },
+    html_class: {
+      defaut: null
     }
   },
   computed: {
@@ -2452,7 +2455,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     current_page: {},
     per_page: {},
-    row: {}
+    row: {},
+    html_class: {
+      defaut: null
+    }
   },
   methods: {
     renderField: function renderField(control, record) {
@@ -2517,6 +2523,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     column: {
@@ -2549,6 +2557,13 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return r;
+    },
+    cellClass: function cellClass() {
+      var r = {
+        'm-datatable__cell': true,
+        'table-cell': true
+      };
+      return r;
     }
   },
   methods: {
@@ -2557,6 +2572,11 @@ __webpack_require__.r(__webpack_exports__);
         event: event,
         record: this.record
       });
+    },
+    onRecordCellClick: function onRecordCellClick() {
+      if (_.isFunction(this.column.click)) {
+        this.column.click(this);
+      }
     }
   }
 });
@@ -2752,9 +2772,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$emit('record-action-click', event);
     }
   },
-  mounted: function mounted() {
-    console.log('Grid is mounted');
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -3924,6 +3942,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     onClick: function onClick(item) {
@@ -4606,7 +4626,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".text-overflow-dynamic-container[data-v-0a13db4b] {\n  position: relative;\n  max-width: 100%;\n  padding: 0 !important;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: flex;\n  vertical-align: text-bottom !important;\n}\n.text-overflow-dynamic-ellipsis[data-v-0a13db4b] {\n  position: absolute;\n  white-space: nowrap;\n  overflow-y: visible;\n  overflow-x: hidden;\n  text-overflow: ellipsis;\n  -ms-text-overflow: ellipsis;\n  -o-text-overflow: ellipsis;\n  max-width: 100%;\n  min-width: 0;\n  width: 100%;\n  top: 0;\n  left: 0;\n}\n.text-overflow-dynamic-container[data-v-0a13db4b]:after,\n.text-overflow-dynamic-ellipsis[data-v-0a13db4b]:after {\n  content: \"-\";\n  display: inline;\n  visibility: hidden;\n  width: 0;\n}", ""]);
+exports.push([module.i, ".text-overflow-dynamic-container[data-v-0a13db4b] {\n  position: relative;\n  max-width: 100%;\n  padding: 0 !important;\n  display: -webkit-flex;\n  display: -moz-flex;\n  display: flex;\n  vertical-align: text-bottom !important;\n}\n.text-overflow-dynamic-ellipsis[data-v-0a13db4b] {\n  position: absolute;\n  white-space: nowrap;\n  overflow-y: hidden;\n  overflow-x: hidden;\n  text-overflow: ellipsis;\n  -ms-text-overflow: ellipsis;\n  -o-text-overflow: ellipsis;\n  max-width: 100%;\n  min-width: 0;\n  width: 100%;\n  top: 0;\n  left: 0;\n}\n.text-overflow-dynamic-container[data-v-0a13db4b]:after,\n.text-overflow-dynamic-ellipsis[data-v-0a13db4b]:after {\n  content: \"-\";\n  display: inline;\n  visibility: hidden;\n  width: 0;\n}", ""]);
 
 // exports
 
@@ -32815,6 +32835,7 @@ var render = function() {
   return _c("span", { staticClass: "text-overflow-dynamic-container" }, [
     _c("span", {
       staticClass: "text-overflow-dynamic-ellipsis",
+      class: _vm.html_class,
       domProps: { innerHTML: _vm._s(_vm.renderCell(_vm.control, _vm.record)) }
     })
   ])
@@ -32843,7 +32864,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "td",
-    { staticClass: "m-datatable__cell table-cell", style: _vm.cellStyle },
+    {
+      class: _vm.cellClass,
+      style: _vm.cellStyle,
+      on: { click: _vm.onRecordCellClick }
+    },
     [
       _c("cell-" + _vm.column.component, {
         tag: "component",
@@ -32852,7 +32877,10 @@ var render = function() {
           record: _vm.record,
           current_page: _vm.current_page,
           per_page: _vm.per_page,
-          row: _vm.row
+          row: _vm.row,
+          html_class: _vm.column.hasOwnProperty("html_class")
+            ? _vm.column.html_class
+            : null
         },
         on: { "record-action-click": _vm.onRecordActionClick }
       })
@@ -34463,7 +34491,11 @@ var render = function() {
                     _c(
                       "div",
                       { staticClass: "m-stack m-stack--ver m-stack--desktop" },
-                      [_c("horizontal-menu"), _vm._v(" "), _c("search")],
+                      [
+                        _c("horizontal-menu"),
+                        _vm._v(" "),
+                        0 ? undefined : _vm._e()
+                      ],
                       1
                     )
                   ]
@@ -34572,7 +34604,7 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm.$app.user
+        _vm.$app.user && _vm.$brand.menu
           ? _c(
               "div",
               {
@@ -51402,61 +51434,68 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/Apps/Login/index.js":
-/*!******************************************!*\
-  !*** ./resources/js/Apps/Login/index.js ***!
-  \******************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Classes_Boot_Boot__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Classes/Boot/Boot */ "./resources/js/Classes/Boot/Boot.js");
-
-var boot = new _Classes_Boot_Boot__WEBPACK_IMPORTED_MODULE_0__["default"]('ComptechApp', {
-  components: __webpack_require__("./resources/js/Components sync recursive \\.vue$/"),
-  store: __webpack_require__(/*! ./../Store/~store */ "./resources/js/Apps/Store/~store.js"),
-  mixins: [__webpack_require__(/*! ./../../Mixins/Store */ "./resources/js/Mixins/Store.js")]
-});
-ComptechApp.vue = boot.Mount('#crv-app');
-
-/***/ }),
-
-/***/ "./resources/js/Apps/Menus/Brand.js":
-/*!******************************************!*\
-  !*** ./resources/js/Apps/Menus/Brand.js ***!
-  \******************************************/
+/***/ "./resources/js/Apps/Attributes/Animal.js":
+/*!************************************************!*\
+  !*** ./resources/js/Apps/Attributes/Animal.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = function (state) {
-  var menu = ComptechApp.CreateMenu('brand', {
-    caption: 'Barnd menu'
+module.exports = {
+  NameOrCode: function NameOrCode(record) {
+    return record.long_name || record.short_name || record.interbull_code || record.matricol_number || record.naab || record.cod_ro;
+  },
+  Status: function Status(record) {
+    if (record.animal_status === 'valid') {
+      return '<span class="m-badge m-badge--success">V</span>';
+    }
+
+    if (record.animal_status === 'invalid') {
+      return '<span class="m-badge m-badge--danger">I</span>';
+    }
+
+    if (record.animal_status === 'adaugat-ferna') {
+      return '<span class="m-badge m-badge--warning">AF</span>';
+    }
+
+    return '-';
+  },
+  Pedigree: function Pedigree(record) {
+    return 'pedigreee';
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/Apps/Menus/Brand/Animal.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Apps/Menus/Brand/Animal.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Attributes = __webpack_require__(/*! ./../../Attributes/Animal */ "./resources/js/Apps/Attributes/Animal.js");
+
+var BrandAnimalMenu = function BrandAnimalMenu(animal, user, role) {
+  var menu = ComptechApp.CreateMenu('brand-animal', {
+    caption: Attributes.NameOrCode(animal) + ' (' + (animal.type === 'sire' ? 'taur' : 'vacă') + ')'
   });
   var options = [{
-    name: 'about',
-    caption: 'Despre',
-    route: {
-      name: 'about'
-    }
+    name: 'brand-animal-dashboard',
+    caption: 'Dashboard',
+    route: null
   }, {
-    name: 'privacy',
-    caption: 'Confidențialitate',
-    route: {
-      name: 'privacy'
-    }
+    name: 'brand-animal-pedigree',
+    caption: 'Ascendența',
+    route: null
   }, {
-    name: 'terms',
-    caption: 'Termeni și condiții',
-    route: {
-      name: 'terms'
-    }
+    name: 'brand-animal-traits',
+    caption: 'Caracteristici',
+    route: null
   }, {
-    name: 'purchase',
-    caption: 'Prețuri',
-    route: {
-      name: 'purchase'
-    }
+    name: 'brand-animal-update',
+    caption: 'Editare',
+    route: null
   }];
 
   _.each(options, function (item) {
@@ -51469,8 +51508,10 @@ module.exports = function (state) {
     }));
   });
 
-  state.brand.menu = menu;
+  return menu;
 };
+
+module.exports = BrandAnimalMenu;
 
 /***/ }),
 
@@ -51722,6 +51763,10 @@ module.exports = {
   getConfig: function getConfig(_ref) {
     var commit = _ref.commit;
     return commit('getConfig');
+  },
+  setBrandMenu: function setBrandMenu(_ref2, options) {
+    var commit = _ref2.commit;
+    return commit('setBrandMenu', options);
   } // getFarm: ({ commit }, id) => commit('getFarm', id),
   // setFarm: ({ commit }, farm) => commit('setFarm', farm),
   // getAnimal: ({ commit }, id) => commit('getAnimal', id),
@@ -51791,7 +51836,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var FooterMenu = __webpack_require__(/*! ./../Menus/Footer */ "./resources/js/Apps/Menus/Footer.js"),
-    BrandMenu = __webpack_require__(/*! ./../Menus/Brand */ "./resources/js/Apps/Menus/Brand.js"),
+    BrandAnimalMenu = __webpack_require__(/*! ./../Menus/Brand/Animal */ "./resources/js/Apps/Menus/Brand/Animal.js"),
     QuickActionsMenu = __webpack_require__(/*! ./../Menus/QuickActions */ "./resources/js/Apps/Menus/QuickActions.js"),
     HorizontalMenu = __webpack_require__(/*! ./../Menus/Horizontal */ "./resources/js/Apps/Menus/Horizontal.js");
 
@@ -51807,8 +51852,8 @@ module.exports = {
       state.config = r.data.config;
       state.role = r.data.role;
       /** Creez meniul brand */
+      // BrandMenu(state)
 
-      BrandMenu(state);
       /** Creez meniul quick actions */
 
       QuickActionsMenu(state);
@@ -51828,6 +51873,21 @@ module.exports = {
       console.log('ERROR.Store Mutations::getConfig()');
       console.log(error);
     });
+  },
+  setBrandMenu: function setBrandMenu(state, options) {
+    if (options.type === null) {
+      state.brand.menu = null;
+      state.brand.record = null;
+      state.brand.type = null;
+      return null;
+    }
+
+    if (options.type === 'animal') {
+      state.brand.menu = BrandAnimalMenu(options.record, state.user, state.role);
+      state.brand.record = options.record;
+      state.brand.type = options.type;
+      return null;
+    }
   }
 };
 
@@ -51850,7 +51910,9 @@ module.exports = {
    * Continut "Brand" din top menu stanga
    */
   brand: {
-    menu: null
+    menu: null,
+    record: null,
+    type: null
   },
 
   /**
@@ -51915,6 +51977,26 @@ module.exports = {
   mutations: __webpack_require__(/*! ./mutations.js */ "./resources/js/Apps/Store/mutations.js"),
   actions: __webpack_require__(/*! ./actions.js */ "./resources/js/Apps/Store/actions.js")
 };
+
+/***/ }),
+
+/***/ "./resources/js/Apps/~LoginApp/index.js":
+/*!**********************************************!*\
+  !*** ./resources/js/Apps/~LoginApp/index.js ***!
+  \**********************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Classes_Boot_Boot__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Classes/Boot/Boot */ "./resources/js/Classes/Boot/Boot.js");
+
+var boot = new _Classes_Boot_Boot__WEBPACK_IMPORTED_MODULE_0__["default"]('ComptechApp', {
+  components: __webpack_require__("./resources/js/Components sync recursive \\.vue$/"),
+  store: __webpack_require__(/*! ./../Store/~store */ "./resources/js/Apps/Store/~store.js"),
+  mixins: [__webpack_require__(/*! ./../../Mixins/Store */ "./resources/js/Mixins/Store.js")]
+});
+ComptechApp.vue = boot.Mount('#crv-app');
 
 /***/ }),
 
@@ -52282,7 +52364,9 @@ function () {
     this.component = 'text';
     this.source = null;
     this.html_style = null;
+    this.html_class = null;
     this.actions = null;
+    this.click = null;
   }
 
   _createClass(Column, [{
@@ -52322,6 +52406,12 @@ function () {
       return this;
     }
   }, {
+    key: "HtmlClass",
+    value: function HtmlClass(style) {
+      this.html_class = style;
+      return this;
+    }
+  }, {
     key: "Component",
     value: function Component(component) {
       this.component = component;
@@ -52337,6 +52427,12 @@ function () {
     key: "Actions",
     value: function Actions(actions) {
       this.actions = actions;
+      return this;
+    }
+  }, {
+    key: "onClick",
+    value: function onClick(click) {
+      this.click = click;
       return this;
     }
   }]);
@@ -52366,9 +52462,11 @@ module.exports = function (name, options) {
     direction: 'OrderByDirection',
     source: 'Source',
     html_style: 'HtmlStyle',
+    html_class: 'HtmlClass',
     component: 'Component',
     type: 'Type',
-    actions: 'Actions'
+    actions: 'Actions',
+    onClick: 'onClick'
   };
 
   _.each(properties, function (method, property) {
@@ -56716,13 +56814,13 @@ module.exports = {
 /***/ }),
 
 /***/ 1:
-/*!************************************************!*\
-  !*** multi ./resources/js/Apps/Login/index.js ***!
-  \************************************************/
+/*!****************************************************!*\
+  !*** multi ./resources/js/Apps/~LoginApp/index.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\xampp\htdocs\CRV\resources\js\Apps\Login\index.js */"./resources/js/Apps/Login/index.js");
+module.exports = __webpack_require__(/*! D:\xampp\htdocs\CRV\resources\js\Apps\~LoginApp\index.js */"./resources/js/Apps/~LoginApp/index.js");
 
 
 /***/ })

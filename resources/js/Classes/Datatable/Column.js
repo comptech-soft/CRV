@@ -13,7 +13,9 @@ class Column {
         this.component = 'text'
         this.source = null
         this.html_style = null
+        this.html_class = null
         this.actions = null
+        this.click = null
     }
 
     Width(width) {
@@ -46,6 +48,11 @@ class Column {
         return this
     }
 
+    HtmlClass(style) {
+        this.html_class = style
+        return this
+    }
+
     Component(component) {
         this.component = component
         return this
@@ -58,6 +65,11 @@ class Column {
 
     Actions(actions) {
         this.actions = actions
+        return this
+    }
+
+    onClick(click) {
+        this.click = click
         return this
     }
 

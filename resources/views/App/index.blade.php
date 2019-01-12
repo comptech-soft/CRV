@@ -10,9 +10,9 @@
 				v-if="$app.mounted"
 			>
 			</main-page>
-			<quick-sidebar></quick-sidebar>
-			<scroll-top></scroll-top>
-			<quick-nav></quick-nav>
+			<quick-sidebar v-if="0"></quick-sidebar>
+			<scroll-top v-if="0"></scroll-top>
+			<quick-nav v-if="0"></quick-nav>
 		</main>
 
 		@include('Commons.scripts')

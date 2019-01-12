@@ -35,6 +35,7 @@
         props: {
             control: {required: true},
             record: {required: true},
+            html_class: {defaut: null},
         },
 
         computed: {

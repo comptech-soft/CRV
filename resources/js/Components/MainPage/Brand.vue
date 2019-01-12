@@ -8,8 +8,10 @@
                 </a>
             </div>
 
-            <!-- doar daca avem user logat -->
-            <div v-if="$app.user" class="m-stack__item m-stack__item--middle m-brand__tools">
+            <!-- 
+                doar daca avem user logat, avem meniu brand 
+            -->
+            <div v-if="$app.user && $brand.menu" class="m-stack__item m-stack__item--middle m-brand__tools">
                 <div 
                     class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push"
                     m-dropdown-toggle="click" 

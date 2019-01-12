@@ -1,7 +1,8 @@
 <template>
     <td
-        class="m-datatable__cell table-cell"
+        :class="cellClass"
         :style="cellStyle"
+        @click="onRecordCellClick"
     >
         <component
             :is="'cell-' + column.component"
@@ -10,6 +11,7 @@
             :current_page="current_page"
             :per_page="per_page"
             :row="row"
+            :html_class="column.hasOwnProperty('html_class') ? column.html_class : null"
             @record-action-click="onRecordActionClick"
         >
         </component>
@@ -39,6 +41,14 @@
                     })
                 }
                 return r
+            },
+
+            cellClass() {
+                let r = {
+                    'm-datatable__cell': true, 
+                    'table-cell': true
+                }
+                return r
             }
             
         },
@@ -49,6 +59,13 @@
                     event,
                     record: this.record,
                 })
+            },
+
+            onRecordCellClick() {
+                if( _.isFunction(this.column.click) )
+                {
+                    this.column.click(this)
+                }
             }
         },
     }

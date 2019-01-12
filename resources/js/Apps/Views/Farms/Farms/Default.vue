@@ -24,7 +24,7 @@
                             refresh: true
                         }),
                         datafetch: {
-                            endpoint: 'system/farms/get-records',
+                            endpoint: 'farms/farms/get-records',
                             searchable: {
                                 fields: ['farms.farm'],
                                 value: null,
@@ -36,9 +36,9 @@
                         title: 'Ferme. Formular',
                         actions: require('./../../../Menus/Portlets/FormActions'),
                         layout: require('./../../../Menus/FormActions/FormActions')({
-                            insert: 'system/breeds/actions/insert',
-                            update: 'system/breeds/actions/update',
-                            delete: 'system/breeds/actions/delete',
+                            insert: 'farms/farms/actions/insert',
+                            update: 'farms/farms/actions/update',
+                            delete: 'farms/farms/actions/delete',
                         }),
                         component: 'farm-controls',
                     },

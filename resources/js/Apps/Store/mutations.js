@@ -1,6 +1,6 @@
 const 
     FooterMenu = require('./../Menus/Footer'),
-    BrandMenu = require('./../Menus/Brand'),
+    BrandAnimalMenu = require('./../Menus/Brand/Animal'),
     QuickActionsMenu = require('./../Menus/QuickActions'),
     HorizontalMenu = require('./../Menus/Horizontal')
 
@@ -19,7 +19,7 @@ module.exports = {
             state.role = r.data.role
 
             /** Creez meniul brand */
-            BrandMenu(state)
+            // BrandMenu(state)
 
             /** Creez meniul quick actions */
             QuickActionsMenu(state)
@@ -45,6 +45,23 @@ module.exports = {
             console.log('ERROR.Store Mutations::getConfig()')
             console.log(error)
         })
+    },
+
+    setBrandMenu(state, options) {
+        if(options.type === null)
+        {
+            state.brand.menu = null
+            state.brand.record = null
+            state.brand.type = null
+            return null
+        }
+        if( options.type === 'animal')
+        {
+            state.brand.menu = BrandAnimalMenu(options.record, state.user, state.role)
+            state.brand.record = options.record
+            state.brand.type = options.type
+            return null
+        }
     },
 
     // getFarm(state, id) {

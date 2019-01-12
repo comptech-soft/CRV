@@ -46,10 +46,13 @@ Route::middleware(['is-authenticated'])->group(function(){
     Route::post('system/localities/actions/{action}', 'System\LocalitiesController@actionDispatch');
     
     /** Ferme */
-    Route::post('system/farms/get-records', 'Farms\FarmsController@getRecords');
-    Route::post('system/farms/actions/{action}', 'Farms\FarmsController@actionDispatch');
+    Route::post('farms/farms/get-records', 'Farms\FarmsController@getRecords');
+    Route::post('farms/farms/actions/{action}', 'Farms\FarmsController@actionDispatch');
 
-    /** Tauri */
-    Route::post('system/sires/get-records', 'Sires\SiresController@getRecords');
-    Route::post('system/sires/actions/{action}', 'Sires\SiresController@actionDispatch');
+    /** Animale. Animale */
+    Route::post('animals/animals/get-records', 'Animals\AnimalsController@getRecords');
+
+    /** Animale. Tauri */
+    Route::post('animals/sires/get-records', 'Animals\SiresController@getRecords');
+    Route::post('animals/sires/actions/{action}', 'Animals\SiresController@actionDispatch');
 });
