@@ -6,6 +6,7 @@ Route::get('/', function () {
 
 Route::post('get-app-configs', 'App\ConfigController@getConfig');
 Route::post('upload-image', 'App\UploadController@uploadImage');
+
 /*
 | neautentificati
 */

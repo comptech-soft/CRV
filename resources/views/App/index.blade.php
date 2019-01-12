@@ -5,7 +5,7 @@
 	@include('Commons.head')
 	
 	<body class="m-page--wide m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default">
-		<main id="crv-app">
+		<main id="app">
 			<main-page
 				v-if="$app.mounted"
 			>
